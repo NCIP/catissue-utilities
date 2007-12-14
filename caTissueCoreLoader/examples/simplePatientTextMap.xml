@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<columnMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ headerRow="true"
+ fileType="xlText">
+    <dateFormat>mm/dd/yyyy</dateFormat>
+    <rowClass>Participant</rowClass>
+    <column attributeName="firstName" columnNo="1"/>
+    <column attributeName="lastName" columnNo="2"/>
+    <column attributeName="gender" columnNo="3">
+        <valueMapping>
+            <valueMap fromValue="F" toValue="Female Gender"/>
+            <valueMap fromValue="M" toValue="Male Gender"/>
+        </valueMapping>
+    </column>
+    <column attributeName="birthDate" columnNo="4"/>
+    
+    <column attributeName="siteName" fixedValue="Haven outpatients clinic"/>
+    <column attributeName="medicalRecordNumber" columnNo="5"/>
+    
+    <column attributeName="protocolTitle" fixedValue="Demo of collection protocol"/>
+    <column attributeName="PPI" columnNo="5"/>
+    
+    <column attributeName="participantActivityStatus" fixedValue="Active"/>
+    <column attributeName="regActivityStatus" fixedValue="Active"/>
+</columnMap>
