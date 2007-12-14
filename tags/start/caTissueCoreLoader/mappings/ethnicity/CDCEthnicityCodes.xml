@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<valueMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../textdata/caTissueTextMap.xsd">
+    <valueMap fromValue="E1" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.01" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.01.001" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.01.002" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.01.003" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.01.004" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.01.005" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.01.006" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.01.007" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.01.008" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.01.009" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.02" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.02.001" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.02.002" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.02.003" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.02.004" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.02.005" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.03" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.03.001" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.03.002" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.03.003" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.03.004" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.03.005" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.03.006" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.03.007" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.03.008" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.04" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.04.001" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.04.002" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.04.003" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.04.004" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.04.005" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.04.006" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.04.007" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.04.008" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.04.009" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.04.010" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.04.011" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.05" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.06" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.07" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E1.08" ignoreCase="true" toValue="Hispanic or Latino"/>
+    <valueMap fromValue="E2" ignoreCase="true" toValue="Not Hispanic or Latino"/>
+</valueMapping>
