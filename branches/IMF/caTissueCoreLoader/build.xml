@@ -1,0 +1,129 @@
+<?xml version ="1.0"?>
+
+<!--Ant Script for create Build for caTISSUE Core-->
+
+<project name="caTissue Text File Loader" default="compile">
+
+	<!-- edit these properties for a particular load of data -->	
+	<property name="catissue.instance" value="MacBook" />
+	<property name="keychain.file" value="./conf/caTissueKeychain.xml" />
+	<property name="data.file" value="./examples/Patient2Cols.txt" />
+	<property name="map.file" value="./examples/Patient2ColsMap.xml" />
+	<!--property name="baddata.file" value="./textdata/badData/bad10patients2.txt" /-->
+	
+	<!--define require dir and Properties -->	
+	<property name="base.dir" value="."/>	
+	<property name="conf.dir" value="conf" />
+	<property name="lib.dir" value="lib" />
+	<property name="src.dir" value="src" />
+	<property name="bin.dir" value="bin" />
+	<property name="gen.dir" value="gen-src" />
+		
+	<property name="mapxsd.file" value="../xml/caTissueTextMap.xsd" />
+	
+	<path id="cp">
+		<fileset dir="lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<pathelement path="${bin.dir}"/>
+		<pathelement path="${conf.dir}"/>
+	</path>
+    	
+	<taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask">
+		<classpath refid="cp"/>
+	</taskdef>
+
+	<target name="init" >
+		<tstamp />
+		<mkdir dir="${bin.dir}" />
+		<mkdir dir="${gen.dir}" />
+		<!--mkdir dir="${dist}" /-->
+	</target>
+	
+	<target name="validateMapping">		
+		<xmlvalidate file="${map.file}" failonerror="yes" lenient="no" warn="no">
+			<attribute name="http://xml.org/sax/features/validation" value="true"/>
+			<attribute name="http://apache.org/xml/features/validation/schema"  value="true"/>
+			<attribute name="http://xml.org/sax/features/namespaces" value="true"/>
+			<property
+				name="http://apache.org/xml/properties/schema/external-noNamespaceSchemaLocation"
+				value="${mapxsd.file}"/>
+		</xmlvalidate>	
+	</target>	
+	
+	<!-- run the loader program -->
+	<target name="loadData" depends="compile">		
+		<java classname="loader.LoadFromText" fork="true">
+			<classpath refid="cp"/>
+			<!--classpath>
+				<pathelement location="${src.dir}"/>
+				</classpath-->
+			<sysproperty key="log4j.configuration"
+				value="${conf.dir}/client_log4j.properties"/>
+			<arg value="${catissue.instance}"/>
+			<arg value="${keychain.file}"/>
+			<arg value="${data.file}"/>
+			<arg value="${map.file}"/>
+			<!--arg value="${baddata.file}"/-->
+		</java>
+	</target>
+	
+	<!--generate Java source files from XML Schema-->
+	<target name="generate" description="Generate Java source files from XML schema file" depends="init">
+		<echo message="Generating source from XML schema ..." />
+		<xjc schema="xml/caTissueTextMap.xsd" package="loader" target="${gen.dir}">
+			<produces dir="${gen.dir}/loader" includes="**/*.java" />
+		</xjc>
+		<xjc schema="xml/caTissueKeyChain.xsd" package="keychain" target="${gen.dir}">
+			<produces dir="${gen.dir}/keychain" includes="**/*.java" />
+		</xjc>
+	</target>
+	
+    <!-- Compile all files, generated and hand-written -->
+	<target name="compile" depends="generate">
+		<javac destdir="${bin.dir}" includes="**/*.*" includeAntRuntime="false">
+			<src path="${src.dir}"/>
+			<src path="${gen.dir}"/>
+			<classpath>
+				<fileset dir="${lib.dir}">
+					<include name="**/*.jar"/>
+				</fileset>				
+			</classpath>
+		</javac>
+		
+		<copy todir="${bin.dir}">
+			<fileset dir="${gen.dir}">
+				<include name="**/*.properties" />
+				<include name="**/bgm.ser" />
+			</fileset>
+		</copy>
+				
+	</target>
+	
+	<!-- ===================================== -->
+	<!-- Remove build directories -->
+	<!-- ===================================== -->
+	<target name="clean" >
+		<delete dir="${bin.dir}" />
+		<delete dir="${gen.dir}" />
+		<!--delete dir="${dist}" /-->
+	</target>
+	
+	<!-- ===================================== -->
+	<!-- Validates all the mappings in the textdata folder-->
+	<!-- ===================================== -->
+	<target name="validateAllMappings">		
+		<xmlvalidate  failonerror="np" lenient="no" warn="no">
+			<fileset dir="./textdata" includes="**/*.xml"/>
+			<attribute name="http://xml.org/sax/features/validation" value="true"/>
+			<attribute name="http://apache.org/xml/features/validation/schema"  value="true"/>
+			<attribute name="http://xml.org/sax/features/namespaces" value="true"/>
+			<property
+				name="http://apache.org/xml/properties/schema/external-noNamespaceSchemaLocation"
+				value="${mapxsd.file}"/>
+		</xmlvalidate>	
+	</target>	
+	
+	
+	
+</project>

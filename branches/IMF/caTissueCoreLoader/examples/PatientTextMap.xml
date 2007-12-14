@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<columnMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../xml/caTissueTextMap.xsd" 
+    headerRow="false"
+    fileType="xlText">
+
+    <dateFormat>MM/dd/yyyy</dateFormat>
+    <rowClass>Participant</rowClass>
+    <column attributeName="protocolTitle" fixedValue="Demo of collection protocol"/>
+    <column attributeName="PPI" columnNo="7"/>
+    <column attributeName="firstName" columnNo="1"/>
+    <column attributeName="lastName" columnNo="2"/>
+    <column attributeName="gender" columnNo="3">  
+        <valueMapping>
+            <valueMap fromValue="F" ignoreCase="true" toValue="Female Gender"/>
+            <valueMap fromValue="M" ignoreCase="true" toValue="Male Gender"/>
+            <valueMap fromValue="Female" ignoreCase="true" toValue="Female Gender"/>
+            <valueMap fromValue="Male" ignoreCase="true" toValue="Male Gender"/>
+        </valueMapping>
+    </column>
+    <column attributeName="birthDate" columnNo="6"/>
+    <column attributeName="medicalRecordNumber" columnNo="7"/>
+    <column attributeName="participantActivityStatus" fixedValue="Active"/>
+    <column attributeName="regActivityStatus" fixedValue="Active"/>
+    <column attributeName="siteName" fixedValue="Haven outpatients clinic"/>
+
+</columnMap>
