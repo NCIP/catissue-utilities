@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<columnMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../xml/caTissueTextMap.xsd" headerRow="false"
+    fileType="xlText">
+
+    <dateFormat>MM/dd/yyyy</dateFormat>
+    <rowClass>Participant</rowClass>
+    <column attributeName="protocolTitle" fixedValue="Demo of collection protocol"/>
+    <column attributeName="PPI" columnNo="10"/>
+    <column attributeName="firstName" columnNo="1"/>
+    <column attributeName="lastName" columnNo="2"/>
+    <column attributeName="middleName" columnNo="3"/>
+    <column attributeName="gender" columnNo="4">
+        <valueMapping>
+            <valueMap fromValue="F" ignoreCase="true" toValue="Female Gender"/>
+            <valueMap fromValue="M" ignoreCase="true" toValue="Male Gender"/>
+            <valueMap fromValue="Female" ignoreCase="true" toValue="Female Gender"/>
+            <valueMap fromValue="Male" ignoreCase="true" toValue="Male Gender"/>
+        </valueMapping>
+    </column>
+    <column attributeName="ethnicity" columnNo="5"/>
+    <column attributeName="race1" columnNo="6"/>
+    <column attributeName="race2" columnNo="7"/>
+    <column attributeName="birthDate" columnNo="10"/>
+    <column attributeName="medicalRecordNumber" columnNo="11"/>
+    <column attributeName="participantActivityStatus" fixedValue="Active"/>
+    <column attributeName="regActivityStatus" fixedValue="Active"/>
+    <column attributeName="siteName" fixedValue="Haven outpatients clinic"/>
+
+    <column attributeName="vitalStatus" columnNo="16">
+        <valueMapping>
+            <valueMap fromValue="alive" ignoreCase="true" toValue="Alive"/>
+            <valueMap fromValue="dead" ignoreCase="true" toValue="Dead"/>
+            <valueMap fromValue="Deceased" ignoreCase="true" toValue="Dead"/>
+            <valueMap fromValue="living" ignoreCase="true" toValue="Alive"/>
+        </valueMapping>
+    </column>
+    <column attributeName="deathDate" columnNo="17"/>
+    <column attributeName="sexGenotype" columnNo="18"/>
+    <column attributeName="socialSecurityNumber" columnNo="19"/>
+
+</columnMap>
