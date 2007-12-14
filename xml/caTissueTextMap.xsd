@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="columnMap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="dateFormat"/>
+        <xs:element minOccurs="1" maxOccurs="3" ref="rowClass"/>
+        <xs:element maxOccurs="unbounded" ref="column"/>
+      </xs:sequence>
+      <xs:attribute name="headerRow" use="required" type="xs:boolean"/>
+      <xs:attribute name="fileType" use="required" type="fileType"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dateFormat" type="xs:string"/>
+  <xs:element name="rowClass" type="xs:string"/>
+  <xs:element name="column">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="valueMapping"/>
+      </xs:sequence>
+      <xs:attribute name="attributeName" use="required" type="attributeName"/>
+      <xs:attribute name="columnNo" type="xs:integer"/>
+      <xs:attribute name="fixedValue"/>
+      <xs:attribute name="externalMapping" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="valueMapping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="valueMap"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="valueMap">
+    <xs:complexType>
+      <xs:attribute name="fromValue" use="required"/>
+      <xs:attribute name="ignoreCase"  type="xs:boolean"/>
+      <xs:attribute name="toValue" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name = "rowClass">
+    <xs:annotation>
+      <xs:documentation>The class of object represented by a row</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base = "xs:string">
+      <xs:enumeration value = "Specimen"/>
+      <xs:enumeration value = "Participant"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name = "fileType">
+    <xs:annotation>
+      <xs:documentation>A file type which can be imported</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base = "xs:string">
+      <xs:enumeration value = "xlText"/>
+      <xs:enumeration value = "excelCSV"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name = "attributeName">
+    <xs:annotation>
+      <xs:documentation>A valid attribute name in caTissue</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base = "xs:NCName">
+      <xs:enumeration value = "availableQuantity"/>
+      <xs:enumeration value = "birthDate"/>
+      <xs:enumeration value = "calendarPoint"/>
+      <xs:enumeration value = "clinicalDiagnosis"/>
+      <xs:enumeration value = "clinicalStatus"/>
+      <xs:enumeration value = "collectionProcedure"/>
+      <xs:enumeration value = "container"/>
+      <xs:enumeration value = "deathDate"/>
+      <xs:enumeration value = "ethnicity"/>
+      <xs:enumeration value = "firstName"/>
+      <xs:enumeration value = "gender"/>
+      <xs:enumeration value = "groupActivityStatus"/>
+      <xs:enumeration value = "groupCollTime"/>
+      <xs:enumeration value = "groupRecTime"/>
+      <xs:enumeration value = "label"/>
+      <xs:enumeration value = "lastName"/>
+      <xs:enumeration value = "lineage"/>
+      <xs:enumeration value = "medicalRecordNumber"/>
+      <xs:enumeration value = "middleName"/>
+      <xs:enumeration value = "parentSpecimenLabel"/>
+      <xs:enumeration value = "participantActivityStatus"/>
+      <xs:enumeration value = "pathologicalStatus"/>
+      <xs:enumeration value = "PPI"/>
+      <xs:enumeration value = "protocolTitle"/>
+      <xs:enumeration value = "quantity"/>
+      <xs:enumeration value = "race"/>
+      <xs:enumeration value = "race1"/>
+      <xs:enumeration value = "race2"/>
+      <xs:enumeration value = "race3"/>
+      <xs:enumeration value = "race4"/>
+      <xs:enumeration value = "receivedQuality"/>
+      <xs:enumeration value = "regActivityStatus"/>
+      <xs:enumeration value = "SCGName"/>
+      <xs:enumeration value = "sexGenotype"/>
+      <xs:enumeration value = "siteName"/>
+      <xs:enumeration value = "socialSecurityNumber"/>
+      <xs:enumeration value = "specCollTime"/>
+      <xs:enumeration value = "specimenActivityStatus"/>
+      <xs:enumeration value = "specimenAvailable"/>
+      <xs:enumeration value = "specimenType"/>
+      <xs:enumeration value = "specRecTime"/>
+      <xs:enumeration value = "tissueSide"/>
+      <xs:enumeration value = "tissueSite"/>
+      <xs:enumeration value = "userEmail"/>
+      <xs:enumeration value = "vitalStatus"/>    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

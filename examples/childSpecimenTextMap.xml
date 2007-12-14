@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<columnMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="../xml/caTissueTextMap.xsd"
+ headerRow="true"
+ fileType="xlText">
+    <dateFormat>MM/dd/yyyy</dateFormat>
+    <rowClass>Specimen</rowClass>
+
+    <column attributeName="parentSpecimenLabel" columnNo="1"/>
+    <column attributeName="userEmail" fixedValue="forei@mail.nih.gov"/>
+    <column attributeName="specCollTime" columnNo="3"/>
+    <column attributeName="specRecTime" columnNo="4"/>
+    <column attributeName="label" columnNo="5"/>
+    <column attributeName="pathologicalStatus" columnNo="6"/>
+    <column attributeName="tissueSite" columnNo="7"/>
+    <column attributeName="quantity" columnNo="8"/>
+    <column attributeName="availableQuantity" columnNo="8"/>
+    <column attributeName="specimenType" columnNo="10"/>
+    <column attributeName="tissueSide" columnNo="11"/>
+    <column attributeName="collectionProcedure" fixedValue="Not Specified"/>
+    <column attributeName="container" columnNo="12">
+        <valueMapping>
+            <valueMap fromValue="Red Top" ignoreCase="true" toValue="EDTA Vacutainer"/>
+            <valueMap fromValue="Green Top" ignoreCase="true" toValue="Serum Separator Vacutainer"/>
+            <valueMap fromValue="Blue Top" ignoreCase="true" toValue="Citrate Vacutainer"/>
+        </valueMapping>
+    </column>
+    <column attributeName="receivedQuality" fixedValue="Not Specified"/>
+    <column attributeName="specimenActivityStatus" fixedValue="Active"/>
+    <column attributeName="specimenAvailable" fixedValue="true"/>
+
+</columnMap>
