@@ -2,7 +2,6 @@
 <caTissueKeyChain xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:noNamespaceSchemaLocation="../xml/caTissueKeychain.xsd">
    
-    <caTissueInstance host="http://192.168.0.24:8080" name="MacBook" password="Login1235" username="forei@mail.nih.gov"/>
     <caTissueInstance 
         name="My Production Instance" 
         host="http://catissue.myplace.edu:8080" 
