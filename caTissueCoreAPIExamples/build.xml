@@ -1,8 +1,6 @@
 <?xml version ="1.0"?>
 
-<!--Ant Script for create Build for caTISSUE Core-->
-
-<project name="caTissue Core v 1.1 Client" default="compile">
+<project name="caTissue Core v 1.2 API Client Examples" default="compile">
 
 	<!-- Set this property to the location of the client directory downloaded as part
 	of the caTissue Core zip file. Note that this version of the client must correspond to the
@@ -12,7 +10,6 @@
 	which are of different versions to be queried during a single execution of runloop.	
 	-->
 	<property name="caTissueClient.dir" value="/Users/ian/dev/caTissueCore_caCORE_Client"/>
-	<!--property name="keychain.file" value="~/Library/caTissue/caTissueKeychain.xml"/-->
 	<property name="keychain.file" value="/Users/${user.name}/Library/caTissue/caTissueKeychain.xml"/>
 
 	<!--define require dir and Properties -->
