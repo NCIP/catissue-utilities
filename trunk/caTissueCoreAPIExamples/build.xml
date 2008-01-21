@@ -1,0 +1,239 @@
+<?xml version ="1.0"?>
+
+<!--Ant Script for create Build for caTISSUE Core-->
+
+<project name="caTissue Core v 1.1 Client" default="compile">
+
+	<!-- Set this property to the location of the client directory downloaded as part
+	of the caTissue Core zip file. Note that this version of the client must correspond to the
+	version of the caTissue instances that you intend to query. -->
+	<!-- TO DO - It would be a fairly simple task to modify this build file to 
+	allow the classpath to be set for each execution of the runone task. This would allow instances of caTissue 
+	which are of different versions to be queried during a single execution of runloop.	
+	-->
+	<property name="caTissueClient.dir" value="/Users/ian/dev/caTissueCore_caCORE_Client"/>
+	<!--property name="keychain.file" value="~/Library/caTissue/caTissueKeychain.xml"/-->
+	<property name="keychain.file" value="/Users/${user.name}/Library/caTissue/caTissueKeychain.xml"/>
+
+	<!--define require dir and Properties -->
+	<property name="base.dir" value="."/>
+	<property name="conf.dir" value="conf"/>
+	<property name="lib.dir" value="lib"/>
+	<property name="src.dir" value="src"/>
+	<property name="bin.dir" value="bin"/>
+	<!-- html output -->
+	<property name="res.file" value="./results.html"/>
+	<property name="activeres.file" value="./results.html"/>
+
+
+	<path id="cp">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${caTissueClient.dir}/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<pathelement path="${bin.dir}"/>
+		<pathelement path="${conf.dir}"/>
+	</path>
+
+
+	<!--path id="app.classpath">
+		<fileset dir="${base.dir}">
+			<include name="*.jar"/>
+		</fileset>
+	</path-->
+
+	<!-- Compile all files, generated and hand-written -->
+	<target name="compile">
+		<javac destdir="${bin.dir}" includes="**/*.*" includeAntRuntime="false">
+			<src path="${src.dir}"/>
+			<classpath>
+				<fileset dir="${lib.dir}">
+					<include name="**/*.jar"/>
+				</fileset>
+				<fileset dir="${caTissueClient.dir}/lib">
+					<include name="**/*.jar"/>
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+
+	<!-- run TestClient java file -->
+	<target name="example1" depends="compile">
+		<java classname="Example1" fork="true">
+			<classpath refid="cp"/>
+			<classpath>
+				<pathelement location="${src.dir}"/>
+			</classpath>
+			<sysproperty key="log4j.configuration" value="${conf.dir}/client_log4j.properties"/>
+		</java>
+	</target>
+
+	<!-- run TestClient java file -->
+	<target name="example2" depends="compile">
+		<java classname="Example2" fork="true">
+			<classpath refid="cp"/>
+			<classpath>
+				<pathelement location="${src.dir}"/>
+			</classpath>
+			<sysproperty key="log4j.configuration" value="${conf.dir}/client_log4j.properties"/>
+		</java>
+	</target>
+
+	<!-- run TestClient java file -->
+	<target name="example3" depends="compile">
+		<java classname="Example3" fork="true">
+			<classpath refid="cp"/>
+			<classpath>
+				<pathelement location="${src.dir}"/>
+			</classpath>
+			<sysproperty key="log4j.configuration" value="${conf.dir}/client_log4j.properties"/>
+		</java>
+	</target>
+
+	<!-- run TestClient java file -->
+	<target name="example4" depends="compile">
+		<java classname="Example4" fork="true">
+			<classpath refid="cp"/>
+			<classpath>
+				<pathelement location="${src.dir}"/>
+			</classpath>
+			<sysproperty key="log4j.configuration" value="${conf.dir}/client_log4j.properties"/>
+		</java>
+	</target>
+
+	<!-- run TestClient java file -->
+	<target name="example5" depends="compile">
+		<java classname="Example5" fork="true">
+			<classpath refid="cp"/>
+			<classpath>
+				<pathelement location="${src.dir}"/>
+			</classpath>
+			<sysproperty key="log4j.configuration" value="${conf.dir}/client_log4j.properties"/>
+		</java>
+	</target>
+
+	<!-- run TestClient java file -->
+	<target name="example6" depends="compile">
+		<java classname="Example6" fork="true">
+			<arg value="smallpatient2.txt"/>
+			<classpath refid="cp"/>
+			<classpath>
+				<pathelement location="${src.dir}"/>
+			</classpath>
+			<sysproperty key="log4j.configuration" value="${conf.dir}/client_log4j.properties"/>
+		</java>
+	</target>
+
+	<!-- run ServiceLoop java file -->
+	<target name="runloop" depends="compile">
+		<copy file="resultsTop.html" overwrite="true" tofile="${res.file}"/>
+
+		<!--antcall target="runone">
+			<param name="iname" value="Bundle QA caTissue"/>
+		</antcall-->
+
+		<antcall target="runone">
+			<param name="iname" value="TJU caTissue"/>
+		</antcall>
+
+		<!--antcall target="runone">
+			<param name="iname" value="TJU caTissue"/>
+			</antcall-->
+
+		<antcall target="runone">
+			<param name="iname" value="Wash U caB2B instance"/>
+		</antcall>
+
+		<antcall target="runone">
+			<param name="iname" value="Wash U 3"/>
+		</antcall>
+		<!--antcall target="runone">
+			<param name="iname" value="Wash U demo"/>
+		</antcall-->
+
+		<!--antcall target="runone">
+			<param name="iname" value="U Michigan"/>
+		</antcall-->
+
+		<antcall target="runone">
+			<param name="iname" value="Northwestern"/>
+		</antcall>
+
+		<!--antcall target="runone">
+			<param name="iname" value="Baylor"/>
+		</antcall-->
+
+		<!--antcall target="runone">
+			<param name="iname" value="Johns Hopkins"/>
+		</antcall-->
+
+		<antcall target="runone">
+			<param name="iname" value="UCSF"/>
+		</antcall>
+
+		<antcall target="runone">
+			<param name="iname" value="UCLA"/>
+		</antcall>
+
+		<antcall target="runone">
+			<param name="iname" value="MSKCC"/>
+		</antcall>
+
+		<antcall target="runone">
+			<param name="iname" value="Indiana"/>
+		</antcall>
+
+		<!--antcall target="runone">
+			<param name="iname" value="NCI Demo server"/>
+			</antcall-->
+
+		<concat destfile="${res.file}" append="true">
+			<filelist dir="." files="resultTail.html"/>
+		</concat>
+		<copy file="${res.file}" overwrite="true" tofile="${activeres.file}"/>
+	</target>
+
+	<!-- run ServiceLoop java file -->
+	<target name="runone" depends="compile">
+		<java classname="ServiceLoop" fork="true">
+			<classpath refid="cp"/>
+			<classpath>
+				<pathelement location="${src.dir}"/>
+			</classpath>
+			<sysproperty key="log4j.configuration" value="${conf.dir}/client_log4j.properties"/>
+			<arg value="${iname}"/>
+			<arg value="${res.file}"/>
+			<arg value="${keychain.file}"/>
+		</java>
+	</target>
+
+
+	<!-- ************************************************************************************************-->
+	<!--                                             Test OS                                             -->
+	<!-- ************************************************************************************************-->
+	<target name="testos">
+		<echo message="${os.name}"/>
+		<echo message="${os.family}"/>
+		<echo message="${os.arch}"/>
+		<echo message="${os.version}"/>
+		<condition property="isMac">
+			<os family="mac"/>
+		</condition>
+		<condition property="isUnix">
+			<os family="unix"/>
+		</condition>
+		<antcall target="reportmac"/>
+		<antcall target="reportunix"/>
+	</target>
+
+	<target name="reportmac" if="isMac">
+		<echo message="It's a Mac"/>
+	</target>
+
+	<target name="reportunix" if="isUnix">
+		<echo message="It's Unix"/>
+	</target>
+
+</project>
