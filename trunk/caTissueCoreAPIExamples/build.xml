@@ -215,7 +215,6 @@
 	<!-- ************************************************************************************************-->
 	<target name="testos">
 		<echo message="${os.name}"/>
-		<echo message="${os.family}"/>
 		<echo message="${os.arch}"/>
 		<echo message="${os.version}"/>
 		<condition property="isMac">
@@ -224,8 +223,12 @@
 		<condition property="isUnix">
 			<os family="unix"/>
 		</condition>
+		<condition property="isWindows">
+			<os family="windows"/>
+		</condition>
 		<antcall target="reportmac"/>
 		<antcall target="reportunix"/>
+		<antcall target="reportwindows"/>
 	</target>
 
 	<target name="reportmac" if="isMac">
@@ -235,5 +238,9 @@
 	<target name="reportunix" if="isUnix">
 		<echo message="It's Unix"/>
 	</target>
-
+	
+	<target name="reportwindows" if="isWindows">
+		<echo message="It's Windows"/>
+	</target>
+	
 </project>
