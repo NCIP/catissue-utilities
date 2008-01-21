@@ -44,8 +44,13 @@
 		</fileset>
 	</path-->
 
+	<target name="init">
+		<tstamp/>
+		<mkdir dir="${bin.dir}"/>
+	</target>
+	
 	<!-- Compile all files, generated and hand-written -->
-	<target name="compile">
+	<target name="compile" depends="init">
 		<javac destdir="${bin.dir}" includes="**/*.*" includeAntRuntime="false">
 			<src path="${src.dir}"/>
 			<classpath>
@@ -241,6 +246,13 @@
 	
 	<target name="reportwindows" if="isWindows">
 		<echo message="It's Windows"/>
+	</target>
+	
+	<!-- ===================================== -->
+	<!-- Remove build directories -->
+	<!-- ===================================== -->
+	<target name="clean">
+		<delete dir="${bin.dir}"/>
 	</target>
 	
 </project>
