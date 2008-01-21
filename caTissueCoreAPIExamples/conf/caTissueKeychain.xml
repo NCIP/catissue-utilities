@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<caTissueKeyChain xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="caTissueKeychain.xsd">
+   
+    <caTissueInstance host="http://192.168.0.24:8080" name="MacBook" password="Login1235" username="forei@mail.nih.gov"/>
+    <caTissueInstance 
+        name="My Production Instance" 
+        host="http://catissue.myplace.edu:8080" 
+        username="auser@myplace.edu"
+        password="Login123" 
+        version="1.2"
+    />
+    
+    <caTissueInstance 
+        name="My Test Instance" 
+        host="http://192.168.0.20:8080" 
+        username="auser@myplace.edu"
+        password="Login123" 
+        version="1.2"
+    />
+</caTissueKeyChain>
