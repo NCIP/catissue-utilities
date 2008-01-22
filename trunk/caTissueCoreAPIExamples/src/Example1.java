@@ -1,19 +1,20 @@
 import edu.wustl.catissuecore.domain.CollectionProtocol;
 import edu.wustl.catissuecore.domain.Specimen;
-import edu.wustl.common.util.logger.Logger;
 import gov.nih.nci.system.applicationservice.ApplicationService;
 import gov.nih.nci.system.applicationservice.ApplicationServiceProvider;
 import gov.nih.nci.system.comm.client.ClientSession;
 
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ArrayList;
+import java.util.Map;
+
+import keychain.CaTissueInstance;
 
 public class Example1 
 {
 	private static FileWriter resFile = null;
+	private static Map<String,CaTissueInstance> instances = null;
 		
     public static void main(String[] args) 
 	{
