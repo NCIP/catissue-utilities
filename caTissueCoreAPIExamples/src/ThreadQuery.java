@@ -1,11 +1,8 @@
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -18,12 +15,8 @@ import gov.nih.nci.system.applicationservice.ApplicationService;
 import gov.nih.nci.system.applicationservice.ApplicationServiceProvider;
 import gov.nih.nci.system.comm.client.ClientSession;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
-
 import keychain.CaTissueInstance;
-import keychain.CaTissueKeyChain;
+import keychain.KeyChainLoader;
 
 
 public class ThreadQuery extends Thread {
@@ -31,7 +24,7 @@ public class ThreadQuery extends Thread {
 	//private ApplicationService appService = null;
 	private static FileWriter resFile = null;
 	private CaTissueInstance instance;
-	private static HashMap<String,CaTissueInstance> instances = new HashMap<String,CaTissueInstance>();
+	private static Map<String, CaTissueInstance> instances = null;
 		
  
 	public ThreadQuery(CaTissueInstance instance) {
@@ -57,7 +50,7 @@ public static void main(String[] args)
 	
 	String keyChainFileName = args[2];
 	
-	loadKeyChain(keyChainFileName);
+	instances = KeyChainLoader.loadKeyChain(keyChainFileName);
 
 	
 		List<CaTissueInstance> qInstances = new ArrayList<CaTissueInstance>();
@@ -233,38 +226,4 @@ public static void main(String[] args)
 	 		e.printStackTrace();
           }
     }
-
-	private static void loadKeyChain(String keyChainName) {
-
-		// create a JAXBContext capable of handling classes generated into
-		// the loader package
-		JAXBContext jc;
-		try {
-			jc = JAXBContext.newInstance( "keychain",
-					Thread.currentThread().getContextClassLoader() );
-			// create an Unmarshaller
-			Unmarshaller u = jc.createUnmarshaller();
-
-			// unmarshal a instance document 
-			CaTissueKeyChain keychain = 
-				(CaTissueKeyChain)u.unmarshal( new FileInputStream( keyChainName ) );	        
-			List iList = keychain.getCaTissueInstance();
-
-
-			// iterate over List
-			for( Iterator iter = iList.iterator(); iter.hasNext(); ) {
-				CaTissueInstance i = (CaTissueInstance) iter.next(); 
-				instances.put(i.getName(), i);
-			}
-
-
-		} catch (JAXBException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
 }

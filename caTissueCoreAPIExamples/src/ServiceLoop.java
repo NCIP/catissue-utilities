@@ -4,8 +4,6 @@ import gov.nih.nci.system.applicationservice.ApplicationService;
 import gov.nih.nci.system.applicationservice.ApplicationServiceProvider;
 import gov.nih.nci.system.comm.client.ClientSession;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
@@ -17,17 +15,13 @@ import java.util.Set;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
-
 import keychain.CaTissueInstance;
-import keychain.CaTissueKeyChain;
+import keychain.KeyChainLoader;
 
 public class ServiceLoop 
 {
 	private static FileWriter resFile = null;
-	private static HashMap<String,CaTissueInstance> instances = new HashMap<String,CaTissueInstance>();
+	private static Map<String,CaTissueInstance> instances = null;
 
 		
     public static void main(String[] args) 
@@ -37,7 +31,7 @@ public class ServiceLoop
 		String resFileName = args[1];
 		String keyChainFileName = args[2];
 		
-		loadKeyChain(keyChainFileName);
+		instances = KeyChainLoader.loadKeyChain(keyChainFileName);
 
 		try {
 			resFile = new FileWriter(resFileName, true);
@@ -257,40 +251,6 @@ public class ServiceLoop
 	 		e.printStackTrace();
           }
     }
-    
-	private static void loadKeyChain(String keyChainName) {
-
-		// create a JAXBContext capable of handling classes generated into
-		// the loader package
-		JAXBContext jc;
-		try {
-			jc = JAXBContext.newInstance( "keychain",
-					Thread.currentThread().getContextClassLoader() );
-			// create an Unmarshaller
-			Unmarshaller u = jc.createUnmarshaller();
-
-			// unmarshal a instance document 
-			CaTissueKeyChain keychain = 
-				(CaTissueKeyChain)u.unmarshal( new FileInputStream( keyChainName ) );	        
-			List iList = keychain.getCaTissueInstance();
-
-
-			// iterate over List
-			for( Iterator iter = iList.iterator(); iter.hasNext(); ) {
-				CaTissueInstance i = (CaTissueInstance) iter.next(); 
-				instances.put(i.getName(), i);
-			}
-
-
-		} catch (JAXBException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
 }
 
 

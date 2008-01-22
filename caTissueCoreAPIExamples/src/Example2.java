@@ -1,8 +1,4 @@
-import java.util.Iterator;
-import java.util.List;
-
 import edu.wustl.catissuecore.domain.CollectionProtocol;
-import edu.wustl.catissuecore.domain.CollectionProtocolRegistration;
 import edu.wustl.catissuecore.domain.Participant;
 import edu.wustl.catissuecore.domain.ParticipantMedicalIdentifier;
 import gov.nih.nci.system.applicationservice.ApplicationService;
@@ -12,7 +8,6 @@ import gov.nih.nci.system.comm.client.ClientSession;
 
 public class Example2 {
 
-	private CollectionProtocol collectionProtocol;
 	private ApplicationService appService ;
 	
 	public static void main(String[] args) 

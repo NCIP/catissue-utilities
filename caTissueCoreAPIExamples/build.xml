@@ -10,6 +10,8 @@
 	which are of different versions to be queried during a single execution of runloop.	
 	-->
 	<property name="caTissueClient.dir" value="/Users/ian/dev/caTissueCore_caCORE_Client"/>
+	<!-- This is a standard location for the keychain file on Mac OS X -->
+	<!-- On Windows put it where you like and edit appropriately -->
 	<property name="keychain.file" value="/Users/${user.name}/Library/caTissue/caTissueKeychain.xml"/>
 
 	<!--define require dir and Properties -->
