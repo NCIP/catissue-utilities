@@ -47,7 +47,7 @@ public class Example2 {
 		try {
 			Participant p = new Participant();
 			
-			p.setGender("Male");
+			p.setGender("Male Gender");
 			p.setFirstName("Hector");
 			p.setLastName("Jones");
 			p.setActivityStatus("Active");
