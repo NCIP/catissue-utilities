@@ -72,7 +72,7 @@ public class Example3 {
 		try {
 			Participant p = new Participant();
 			
-			p.setGender("Female");
+			p.setGender("Female Gender");
 			p.setFirstName("Heather");
 			p.setLastName("Jacobs");
 			p.setActivityStatus("Active");
