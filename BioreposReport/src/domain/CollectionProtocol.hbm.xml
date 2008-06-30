@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="domain">
+	<class name="CollectionProtocol" table="collection_protocol">
+
+		<id name="id" column="id">
+			<generator class="increment" />
+		</id>
+
+		<property name="name" column="name" type="string" />
+		
+		<property name="Identifier" column="identifier" type="string" />
+
+		<set name="periodShipment" inverse="true">
+			<key column="collection_protocol_id" />
+			<one-to-many class="NumberShipped" />
+		</set>
+
+		<set name="available" inverse="true">
+			<key column="collection_protocol_id" />
+			<one-to-many class="SpecimenInventory" />
+		</set>
+
+	</class>
+</hibernate-mapping>

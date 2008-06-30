@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="domain">
+	<class name="NumberShipped" table="number_shipped">
+		<id name="id" column="id">
+			<generator class="increment" />
+		</id>
+
+		<property name="numbershipped" column="number_shipped"
+			type="long" />
+
+		<many-to-one name="specimenType" column="specimen_type_id"
+			class="SpecimenType" not-null="true" />
+
+		<many-to-one name="shippedFor" column="collection_protocol_id"
+			class="CollectionProtocol" not-null="true" />
+
+		<many-to-one name="during" column="report_period_id"
+			class="Reportingperiod" not-null="true" />
+
+	</class>
+</hibernate-mapping>

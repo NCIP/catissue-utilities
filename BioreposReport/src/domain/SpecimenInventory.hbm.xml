@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="domain">
+	<class name="SpecimenInventory" table="specimen_inventory">
+
+		<id name="id" column="id" />
+
+		<property name="numberofspecimens" column="specimen_count"
+			type="long" />
+
+		<many-to-one name="numberOf" column="specimen_type_id"
+			class="SpecimenType" not-null="true" />
+
+		<many-to-one name="collectedFor" column="collection_protocol_id"
+			class="CollectionProtocol" not-null="true" />
+
+	</class>
+</hibernate-mapping>
