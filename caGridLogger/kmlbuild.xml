@@ -1,0 +1,78 @@
+
+<project name="ivyexamples-discovery" default="run">
+
+	<property name="lib.dir" value="lib" />
+	<property name="build.dir" value="build" />
+	<property name="src.dir" value="src" />
+
+	<property environment="env" />
+	<property name="globus.dir" value="${env.GLOBUS_LOCATION}" />
+	<fail unless="env.GLOBUS_LOCATION" message="You must set the environment variable GLOBUS_LOCATION to the directory in which you have Globus installed." />
+
+
+
+	<property name="jaxblib.dir" value="lib/jaxb"/>
+	<property name="gen.dir" value="gen-src"/>
+
+	<property name="mapxsd.file" value="../xml/caTissueTextMap.xsd"/>
+	
+	<taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask" >
+		<classpath refid="lib.path.id"/>
+	</taskdef>
+	
+	
+
+	<path id="lib.path.id">
+		<fileset dir="${jaxblib.dir}">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${globus.dir}/lib">
+			<include name="*.jar" />
+			<exclude name="caGrid-*.jar" />
+		</fileset>
+		<path location="${build.dir}" />
+	</path>
+	
+	<path id="run.path.id">
+		<path refid="lib.path.id" />
+		<fileset dir="${src.dir}/kml">
+			<include name="*.properties" />
+		</fileset>
+		<path location="${globus.dir}" />
+	</path>
+	
+	<target name="init">
+		<tstamp/>
+		<mkdir dir="${gen.dir}"/>
+	</target>
+	
+
+	<target name="run" depends="clean" description="--> compile and run the project">
+		<mkdir dir="${build.dir}" />
+		<javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="lib.path.id" />
+		<!--java classpathref="run.path.id" classname="org.cagrid.ivyexamples.discovery.DiscoveryExamples" /-->
+		<java classpathref="run.path.id" classname="gridexamples.ListServices" />
+	</target>
+
+	<target name="clean" description="--> cleans the project">
+		<delete dir="${build.dir}" failonerror="false" />
+	</target>
+	
+	<!--generate Java source files from XML Schema-->
+	<target name="generate" description="Generate Java source files from XML schema file"
+		depends="init">
+		<echo message="Generating source from XML schema ..."/>
+		<!--xjc -d src_generated -b bindings.xjb http://schemas.opengis.net/kml/2.2.0/ogckml22.xsd -->
+		<xjc schema='xml/ogckml22.xsd' binding="xml/kmlBindings.xjb" target="${gen.dir}" extension="true">
+			<!--xjc schema='xml/myKMLSchema.xsd'  target="${gen.dir}"  package="kml"-->
+		<!--xjc schema='xml/kml21.xsd'  target="${gen.dir}"  package="kml" extension="true"-->
+			<!--xjc binding="xml/kmlBindings.xjb"  target="${gen.dir}"-->
+				<!--produces dir="${gen.dir}/loader" includes="**/*.java"/-->
+		</xjc>
+	</target>
+	
+	
+</project>
