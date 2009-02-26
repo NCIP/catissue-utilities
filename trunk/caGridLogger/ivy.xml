@@ -1,0 +1,14 @@
+
+<ivy-module version="2.0">
+    <info organisation="org.cagrid.ivyexamples" module="discovery"/>
+    <dependencies>
+        <dependency org="caGrid" name="discovery" rev="1.2"/>
+        <!-- IMF ADDED -->
+        <dependency org="caGrid" name="cql" rev="1.2"/>
+        <dependency org="caGrid" name="data" rev="1.2"/>
+        <dependency org="caGrid" name="syncgts" rev="1.2"/>
+        <dependency org="caGrid" name="opensaml" rev="1.2"/>
+        <dependency org="caGrid" name="authentication-service" rev="1.2"/>
+        
+    </dependencies>
+</ivy-module>

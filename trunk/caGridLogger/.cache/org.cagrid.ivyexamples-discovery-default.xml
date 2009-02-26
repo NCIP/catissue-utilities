@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="org.cagrid.ivyexamples"
+		module="discovery"
+		revision="working@Macintosh-20.local"
+		conf="default"
+		confs="default"
+		date="20090218225818"/>
+	<dependencies>
+		<module organisation="caGrid" name="authentication-service" >
+			<revision name="1.2" status="release" pubdate="20081231092946" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="service, stubs, impl-test, endorsed, client, common, test" position="40">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="2885" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/authentication-service/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/authentication-service/ivy-1.2.xml"/>
+				<caller organisation="org.cagrid.ivyexamples" name="discovery" conf="default" rev="1.2" callerrev="working@Macintosh-20.local"/>
+				<artifacts>
+					<artifact name="caGrid-authentication-service-common" type="jar" ext="jar" status="no" details="" size="11637" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/authentication-service/1.2/caGrid-authentication-service-common-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/authentication-service/1.2/caGrid-authentication-service-common-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-authentication-service-client" type="jar" ext="jar" status="no" details="" size="9381" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/authentication-service/1.2/caGrid-authentication-service-client-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/authentication-service/1.2/caGrid-authentication-service-client-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-authentication-service-service" type="jar" ext="jar" status="no" details="" size="48041" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/authentication-service/1.2/caGrid-authentication-service-service-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/authentication-service/1.2/caGrid-authentication-service-service-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-authentication-service-stubs" type="jar" ext="jar" status="no" details="" size="38784" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/authentication-service/1.2/caGrid-authentication-service-stubs-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/authentication-service/1.2/caGrid-authentication-service-stubs-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-authentication-service-tests" type="jar" ext="jar" status="no" details="" size="2540" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/authentication-service/1.2/caGrid-authentication-service-tests-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/authentication-service/1.2/caGrid-authentication-service-tests-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="cacore" name="csm" >
+			<revision name="3.2" status="integration" pubdate="20081231092902" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" homepage="http://ncicb.nci.nih.gov/NCICB/infrastructure/cacore_overview/csm" downloaded="false" searched="true" default="false" conf="auth" position="41">
+				<license name="CSM License" url="http://ncicb.nci.nih.gov/download/csmlicenseagreement.jsp"/>
+				<metadata-artifact status="no" details="" size="2503" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/cacore/csm/ivy-3.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/cacore/csm/ivy-3.2.xml"/>
+				<caller organisation="caGrid" name="authentication-service" conf="service" rev="3.2" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="csmapi" type="jar" ext="jar" status="no" details="" size="219159" time="0" location="/Users/ian/tools/caGrid/repository/cacore/csm/3.2/csmapi.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/cacore/csm/3.2/csmapi.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="cacore" name="clm" >
+			<revision name="3.2" status="integration" pubdate="20081231092902" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" homepage="http://ncicb.nci.nih.gov/NCICB/infrastructure/cacore_overview/clm" downloaded="false" searched="true" default="false" conf="default" position="42">
+				<license name="CLM License" url="http://ncicb.nci.nih.gov/download/clmlicenseagreement.jsp"/>
+				<metadata-artifact status="no" details="" size="2914" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/cacore/clm/ivy-3.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/cacore/clm/ivy-3.2.xml"/>
+				<caller organisation="cacore" name="csm" conf="auth" rev="3.2" callerrev="3.2"/>
+				<artifacts>
+					<artifact name="clm" type="jar" ext="jar" status="no" details="" size="75275" time="0" location="/Users/ian/tools/caGrid/repository/cacore/clm/3.2/clm.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/cacore/clm/3.2/clm.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="springframework" name="spring" >
+			<revision name="1.2.8" status="integration" pubdate="20081231092910" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" error="configuration(s) not found in springframework#spring;1.2.8: full. It was required from caGrid#authentication-service;1.2 service" downloaded="false" searched="true" default="false" conf="full, beans" position="-1">
+				<metadata-artifact status="no" details="" size="728" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/springframework/spring/ivy-1.2.8.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/springframework/spring/ivy-1.2.8.xml"/>
+				<caller organisation="caGrid" name="authentication-service" conf="service" rev="1.2.8" callerrev="1.2"/>
+				<caller organisation="cacore" name="api" conf="default" rev="1.2" callerrev="3.1"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="1.2" status="integration" pubdate="20081231092910" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" evicted="latest-revision" evicted-reason="" downloaded="false" searched="true" default="false" conf="full" position="-1">
+				<metadata-artifact status="no" details="" size="614" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/springframework/spring/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/springframework/spring/ivy-1.2.xml"/>
+				<evicted-by rev="1.2.8"/>
+				<caller organisation="cacore" name="api" conf="default" rev="1.2" callerrev="3.1"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="opensaml" >
+			<revision name="1.2" status="release" pubdate="20081231092939" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="http, default, endorsed" position="35">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="1415" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/opensaml/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/opensaml/ivy-1.2.xml"/>
+				<caller organisation="caGrid" name="authentication-service" conf="service, endorsed" rev="1.2" callerrev="1.2"/>
+				<caller organisation="org.cagrid.ivyexamples" name="discovery" conf="default" rev="1.2" callerrev="working@Macintosh-20.local"/>
+				<artifacts>
+					<artifact name="caGrid-opensaml" type="jar" ext="jar" status="no" details="" size="146441" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/opensaml/1.2/caGrid-opensaml-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/opensaml/1.2/caGrid-opensaml-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="apache" name="xerces2-j" >
+			<revision name="2.7.1" status="integration" pubdate="20081231092902" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" homepage="http://xerces.apache.org/xerces-j/" downloaded="false" searched="true" default="false" conf="default" position="37">
+				<license name="Apache" url="http://www.apache.org/licenses/LICENSE"/>
+				<metadata-artifact status="no" details="" size="836" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/apache/xerces2-j/ivy-2.7.1.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/apache/xerces2-j/ivy-2.7.1.xml"/>
+				<caller organisation="caGrid" name="opensaml" conf="endorsed" rev="2.7.1" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="xml-apis" type="jar" ext="jar" status="no" details="" size="194205" time="0" location="/Users/ian/tools/caGrid/repository/apache/xerces2-j/2.7.1/xml-apis.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/apache/xerces2-j/2.7.1/xml-apis.jar"/>
+					</artifact>
+					<artifact name="resolver" type="jar" ext="jar" status="no" details="" size="60047" time="0" location="/Users/ian/tools/caGrid/repository/apache/xerces2-j/2.7.1/resolver.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/apache/xerces2-j/2.7.1/resolver.jar"/>
+					</artifact>
+					<artifact name="xercesImpl" type="jar" ext="jar" status="no" details="" size="1203860" time="0" location="/Users/ian/tools/caGrid/repository/apache/xerces2-j/2.7.1/xercesImpl.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/apache/xerces2-j/2.7.1/xercesImpl.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="apache" name="tomcat-servlet" >
+			<revision name="2.2" status="integration" pubdate="20081231092902" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" downloaded="false" searched="true" default="false" conf="default" position="39">
+				<metadata-artifact status="no" details="" size="541" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/apache/tomcat-servlet/ivy-2.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/apache/tomcat-servlet/ivy-2.2.xml"/>
+				<caller organisation="caGrid" name="opensaml" conf="http" rev="2.2" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="servlet" type="jar" ext="jar" status="no" details="" size="79265" time="0" location="/Users/ian/tools/caGrid/repository/apache/tomcat-servlet/2.2/servlet.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/apache/tomcat-servlet/2.2/servlet.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="apache" name="jarkarta-commons-httpclient" >
+			<revision name="3.0" status="integration" pubdate="20081231092902" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" homepage="http://jakarta.apache.org/httpcomponents/httpclient-3.x/" downloaded="false" searched="true" default="false" conf="default" position="38">
+				<metadata-artifact status="no" details="" size="697" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/apache/jarkarta-commons-httpclient/ivy-3.0.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/apache/jarkarta-commons-httpclient/ivy-3.0.xml"/>
+				<caller organisation="caGrid" name="authentication-service" conf="service" rev="3.0" callerrev="1.2"/>
+				<caller organisation="caGrid" name="opensaml" conf="http" rev="3.0" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="commons-httpclient" type="jar" ext="jar" status="no" details="" size="279383" time="0" location="/Users/ian/tools/caGrid/repository/apache/jarkarta-commons-httpclient/3.0/commons-httpclient-3.0.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/apache/jarkarta-commons-httpclient/3.0/commons-httpclient-3.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="apache" name="commons-codec" >
+			<revision name="1.3" status="integration" pubdate="20081231092902" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" homepage="http://commons.apache.org/codec/" downloaded="false" searched="true" default="false" conf="default" position="36">
+				<metadata-artifact status="no" details="" size="687" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/apache/commons-codec/ivy-1.3.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/apache/commons-codec/ivy-1.3.xml"/>
+				<caller organisation="caGrid" name="opensaml" conf="default" rev="1.3" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="commons-codec" type="jar" ext="jar" status="no" details="" size="46725" time="0" location="/Users/ian/tools/caGrid/repository/apache/commons-codec/1.3/commons-codec-1.3.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/apache/commons-codec/1.3/commons-codec-1.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="syncgts" >
+			<revision name="1.2" status="release" pubdate="20081231093405" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="service, stubs, impl-test, client, common, test" position="26">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="2507" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/syncgts/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/syncgts/ivy-1.2.xml"/>
+				<caller organisation="org.cagrid.ivyexamples" name="discovery" conf="default" rev="1.2" callerrev="working@Macintosh-20.local"/>
+				<artifacts>
+					<artifact name="caGrid-syncgts-common" type="jar" ext="jar" status="no" details="" size="31227" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/syncgts/1.2/caGrid-syncgts-common-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/syncgts/1.2/caGrid-syncgts-common-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-syncgts-tests" type="jar" ext="jar" status="no" details="" size="339" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/syncgts/1.2/caGrid-syncgts-tests-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/syncgts/1.2/caGrid-syncgts-tests-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-syncgts-client" type="jar" ext="jar" status="no" details="" size="11154" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/syncgts/1.2/caGrid-syncgts-client-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/syncgts/1.2/caGrid-syncgts-client-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-syncgts-service" type="jar" ext="jar" status="no" details="" size="25680" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/syncgts/1.2/caGrid-syncgts-service-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/syncgts/1.2/caGrid-syncgts-service-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-syncgts-stubs" type="jar" ext="jar" status="no" details="" size="75209" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/syncgts/1.2/caGrid-syncgts-stubs-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/syncgts/1.2/caGrid-syncgts-stubs-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="gts" >
+			<revision name="1.2" status="release" pubdate="20081231093034" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="service, stubs, client, common" position="29">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="2415" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/gts/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/gts/ivy-1.2.xml"/>
+				<caller organisation="caGrid" name="syncgts" conf="service, client" rev="1.2" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="caGrid-gts-stubs" type="jar" ext="jar" status="no" details="" size="150715" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/gts/1.2/caGrid-gts-stubs-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/gts/1.2/caGrid-gts-stubs-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-gts-client" type="jar" ext="jar" status="no" details="" size="15506" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/gts/1.2/caGrid-gts-client-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/gts/1.2/caGrid-gts-client-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-gts-common" type="jar" ext="jar" status="no" details="" size="18289" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/gts/1.2/caGrid-gts-common-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/gts/1.2/caGrid-gts-common-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-gts-service" type="jar" ext="jar" status="no" details="" size="149432" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/gts/1.2/caGrid-gts-service-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/gts/1.2/caGrid-gts-service-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="data" >
+			<revision name="1.2" status="release" pubdate="20081231093210" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="service-schemas, validation, stubs, impl-test, common, enum-schemas, service, extension-schemas, tools, bdt-schemas, full, processors, cql-examples, utils, test" position="9">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="7353" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/ivy-1.2.xml"/>
+				<caller organisation="org.cagrid.ivyexamples" name="discovery" conf="default" rev="1.2" callerrev="working@Macintosh-20.local"/>
+				<artifacts>
+					<artifact name="DataService" type="wsdl" ext="wsdl" status="no" details="" size="8248" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/DataService-1.2.wsdl">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/DataService-1.2.wsdl"/>
+					</artifact>
+					<artifact name="invalid/groupWithoutLogic" type="xml" ext="xml" status="no" details="" size="527" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/groupWithoutLogic-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/groupWithoutLogic-1.2.xml"/>
+					</artifact>
+					<artifact name="invalid/associationWithoutName" type="xml" ext="xml" status="no" details="" size="492" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/associationWithoutName-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/associationWithoutName-1.2.xml"/>
+					</artifact>
+					<artifact name="returnNamedAttributes" type="xml" ext="xml" status="no" details="" size="472" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/returnNamedAttributes-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/returnNamedAttributes-1.2.xml"/>
+					</artifact>
+					<artifact name="domain/objectWithAssociationNoRoleName" type="xml" ext="xml" status="no" details="" size="477" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/domain/objectWithAssociationNoRoleName-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/domain/objectWithAssociationNoRoleName-1.2.xml"/>
+					</artifact>
+					<artifact name="BulkDataTransferServiceMetadata" type="xsd" ext="xsd" status="no" details="" size="1778" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/BulkDataTransferServiceMetadata-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/BulkDataTransferServiceMetadata-1.2.xsd"/>
+					</artifact>
+					<artifact name="DataServiceExtensionData" type="xsd" ext="xsd" status="no" details="" size="3820" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/DataServiceExtensionData-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/DataServiceExtensionData-1.2.xsd"/>
+					</artifact>
+					<artifact name="countDistinctAttributes" type="xml" ext="xml" status="no" details="" size="439" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/countDistinctAttributes-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/countDistinctAttributes-1.2.xml"/>
+					</artifact>
+					<artifact name="caGrid-data-tests" type="jar" ext="jar" status="no" details="" size="166208" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/caGrid-data-tests-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/caGrid-data-tests-1.2.jar"/>
+					</artifact>
+					<artifact name="objectWithAssociation" type="xml" ext="xml" status="no" details="" size="494" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/objectWithAssociation-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/objectWithAssociation-1.2.xml"/>
+					</artifact>
+					<artifact name="DataServiceAuditorConfiguration" type="xsd" ext="xsd" status="no" details="" size="2160" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/DataServiceAuditorConfiguration-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/DataServiceAuditorConfiguration-1.2.xsd"/>
+					</artifact>
+					<artifact name="invalid/domain/groupWithInvalidAttributeName" type="xml" ext="xml" status="no" details="" size="519" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/domain/groupWithInvalidAttributeName-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/domain/groupWithInvalidAttributeName-1.2.xml"/>
+					</artifact>
+					<artifact name="BDTDataService" type="wsdl" ext="wsdl" status="no" details="" size="9613" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/BDTDataService-1.2.wsdl">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/BDTDataService-1.2.wsdl"/>
+					</artifact>
+					<artifact name="caGrid-data-service" type="jar" ext="jar" status="no" details="" size="53456" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/caGrid-data-service-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/caGrid-data-service-1.2.jar"/>
+					</artifact>
+					<artifact name="invalid/attributeWithoutValue" type="xml" ext="xml" status="no" details="" size="408" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/attributeWithoutValue-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/attributeWithoutValue-1.2.xml"/>
+					</artifact>
+					<artifact name="DataServiceTypes" type="xsd" ext="xsd" status="no" details="" size="671" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/DataServiceTypes-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/DataServiceTypes-1.2.xsd"/>
+					</artifact>
+					<artifact name="invalid/domain/objectWithInvalidAssociationClass" type="xml" ext="xml" status="no" details="" size="431" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/domain/objectWithInvalidAssociationClass-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/domain/objectWithInvalidAssociationClass-1.2.xml"/>
+					</artifact>
+					<artifact name="invalid/noGroupChildren" type="xml" ext="xml" status="no" details="" size="426" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/noGroupChildren-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/noGroupChildren-1.2.xml"/>
+					</artifact>
+					<artifact name="ClassToQname" type="xsd" ext="xsd" status="no" details="" size="1090" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/ClassToQname-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/ClassToQname-1.2.xsd"/>
+					</artifact>
+					<artifact name="countAllOfType" type="xml" ext="xml" status="no" details="" size="374" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/countAllOfType-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/countAllOfType-1.2.xml"/>
+					</artifact>
+					<artifact name="domain/groupWithValidAttributes" type="xml" ext="xml" status="no" details="" size="516" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/domain/groupWithValidAttributes-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/domain/groupWithValidAttributes-1.2.xml"/>
+					</artifact>
+					<artifact name="caGrid-data-validation" type="jar" ext="jar" status="no" details="" size="19989" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/caGrid-data-validation-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/caGrid-data-validation-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-data-common" type="jar" ext="jar" status="no" details="" size="31564" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/caGrid-data-common-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/caGrid-data-common-1.2.jar"/>
+					</artifact>
+					<artifact name="invalid/oneGroupChild" type="xml" ext="xml" status="no" details="" size="487" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/oneGroupChild-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/oneGroupChild-1.2.xml"/>
+					</artifact>
+					<artifact name="caGrid-data-utils" type="jar" ext="jar" status="no" details="" size="51940" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/caGrid-data-utils-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/caGrid-data-utils-1.2.jar"/>
+					</artifact>
+					<artifact name="BDTDataServiceBulkDataHandler" type="wsdl" ext="wsdl" status="no" details="" size="13292" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/BDTDataServiceBulkDataHandler-1.2.wsdl">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/BDTDataServiceBulkDataHandler-1.2.wsdl"/>
+					</artifact>
+					<artifact name="invalid/modifierMissingCount" type="xml" ext="xml" status="no" details="" size="426" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/modifierMissingCount-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/modifierMissingCount-1.2.xml"/>
+					</artifact>
+					<artifact name="returnAllOfType" type="xml" ext="xml" status="no" details="" size="339" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/returnAllOfType-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/returnAllOfType-1.2.xml"/>
+					</artifact>
+					<artifact name="caGrid-data-stubs" type="jar" ext="jar" status="no" details="" size="302647" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/caGrid-data-stubs-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/caGrid-data-stubs-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-data-tools" type="jar" ext="jar" status="no" details="" size="192920" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/caGrid-data-tools-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/caGrid-data-tools-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-data-cql" type="jar" ext="jar" status="no" details="" size="7259" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/caGrid-data-cql-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/caGrid-data-cql-1.2.jar"/>
+					</artifact>
+					<artifact name="BulkDataHandler" type="wsdl" ext="wsdl" status="no" details="" size="13053" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/BulkDataHandler-1.2.wsdl">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/BulkDataHandler-1.2.wsdl"/>
+					</artifact>
+					<artifact name="invalid/targetWithoutName" type="xml" ext="xml" status="no" details="" size="338" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/targetWithoutName-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/targetWithoutName-1.2.xml"/>
+					</artifact>
+					<artifact name="DataServiceExceptions" type="xsd" ext="xsd" status="no" details="" size="1118" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/DataServiceExceptions-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/DataServiceExceptions-1.2.xsd"/>
+					</artifact>
+					<artifact name="invalid/tooManyTargetChildren" type="xml" ext="xml" status="no" details="" size="476" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/tooManyTargetChildren-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/tooManyTargetChildren-1.2.xml"/>
+					</artifact>
+					<artifact name="EnumerationDataService" type="wsdl" ext="wsdl" status="no" details="" size="9036" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/EnumerationDataService-1.2.wsdl">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/EnumerationDataService-1.2.wsdl"/>
+					</artifact>
+					<artifact name="invalid/domain/invalidTarget" type="xml" ext="xml" status="no" details="" size="328" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/domain/invalidTarget-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/domain/invalidTarget-1.2.xml"/>
+					</artifact>
+					<artifact name="objectWithNestedGroup" type="xml" ext="xml" status="no" details="" size="726" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/objectWithNestedGroup-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/objectWithNestedGroup-1.2.xml"/>
+					</artifact>
+					<artifact name="domain/objectWithAttribute" type="xml" ext="xml" status="no" details="" size="447" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/domain/objectWithAttribute-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/domain/objectWithAttribute-1.2.xml"/>
+					</artifact>
+					<artifact name="attributePredicates" type="xml" ext="xml" status="no" details="" size="1005" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/attributePredicates-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/attributePredicates-1.2.xml"/>
+					</artifact>
+					<artifact name="BDTDataServiceBulkDataHandlerTypes" type="xsd" ext="xsd" status="no" details="" size="721" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/BDTDataServiceBulkDataHandlerTypes-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/BDTDataServiceBulkDataHandlerTypes-1.2.xsd"/>
+					</artifact>
+					<artifact name="objectWithGroup" type="xml" ext="xml" status="no" details="" size="599" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/objectWithGroup-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/objectWithGroup-1.2.xml"/>
+					</artifact>
+					<artifact name="invalid/domain/objectWithInvalidAssociationRoleName" type="xml" ext="xml" status="no" details="" size="457" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/domain/objectWithInvalidAssociationRoleName-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/domain/objectWithInvalidAssociationRoleName-1.2.xml"/>
+					</artifact>
+					<artifact name="BDTDataServiceTypes" type="xsd" ext="xsd" status="no" details="" size="700" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/BDTDataServiceTypes-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/BDTDataServiceTypes-1.2.xsd"/>
+					</artifact>
+					<artifact name="ServiceSecurity" type="wsdl" ext="wsdl" status="no" details="" size="6783" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/ServiceSecurity-1.2.wsdl">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/ServiceSecurity-1.2.wsdl"/>
+					</artifact>
+					<artifact name="EnumerationDataServiceTypes" type="xsd" ext="xsd" status="no" details="" size="740" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/EnumerationDataServiceTypes-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/EnumerationDataServiceTypes-1.2.xsd"/>
+					</artifact>
+					<artifact name="invalid/modifierWithBothAttributeTypes" type="xml" ext="xml" status="no" details="" size="520" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/modifierWithBothAttributeTypes-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/modifierWithBothAttributeTypes-1.2.xml"/>
+					</artifact>
+					<artifact name="invalid/associationWithTooManyChildren" type="xml" ext="xml" status="no" details="" size="562" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/associationWithTooManyChildren-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/associationWithTooManyChildren-1.2.xml"/>
+					</artifact>
+					<artifact name="invalid/domain/invalidAttributeDataType" type="xml" ext="xml" status="no" details="" size="487" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/domain/invalidAttributeDataType-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/invalid/domain/invalidAttributeDataType-1.2.xml"/>
+					</artifact>
+					<artifact name="domain/objectWithAssociation" type="xml" ext="xml" status="no" details="" size="457" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/domain/objectWithAssociation-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/domain/objectWithAssociation-1.2.xml"/>
+					</artifact>
+					<artifact name="objectWithAttribute" type="xml" ext="xml" status="no" details="" size="409" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/objectWithAttribute-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/objectWithAttribute-1.2.xml"/>
+					</artifact>
+					<artifact name="DataServiceStyle" type="xsd" ext="xsd" status="no" details="" size="3720" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/DataServiceStyle-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/DataServiceStyle-1.2.xsd"/>
+					</artifact>
+					<artifact name="objectWithAssociationNoRoleName" type="xml" ext="xml" status="no" details="" size="477" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/objectWithAssociationNoRoleName-1.2.xml">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/objectWithAssociationNoRoleName-1.2.xml"/>
+					</artifact>
+					<artifact name="BulkDataHandlerReference" type="xsd" ext="xsd" status="no" details="" size="690" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/BulkDataHandlerReference-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/data/1.2/BulkDataHandlerReference-1.2.xsd"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="cacore" name="api" >
+			<revision name="3.1" status="integration" pubdate="20081231092902" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" downloaded="false" searched="true" default="false" conf="default" position="23">
+				<metadata-artifact status="no" details="" size="821" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/cacore/api/ivy-3.1.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/cacore/api/ivy-3.1.xml"/>
+				<caller organisation="caGrid" name="data" conf="impl-test" rev="3.1" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="client" type="jar" ext="jar" status="no" details="" size="629096" time="0" location="/Users/ian/tools/caGrid/repository/cacore/api/3.1/client.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/cacore/api/3.1/client.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="cglib" name="cglib" >
+			<revision name="2.1_3" status="release" pubdate="20081231092907" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" homepage="http://cglib.sourceforge.net/" downloaded="false" searched="true" default="false" conf="full" position="25">
+				<license name="Apache" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="1440" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/cglib/cglib/ivy-2.1_3.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/cglib/cglib/ivy-2.1_3.xml"/>
+				<caller organisation="cacore" name="api" conf="default" rev="2.1_3" callerrev="3.1"/>
+				<artifacts>
+					<artifact name="cglib-nodep" type="jar" ext="jar" status="no" details="" size="324238" time="0" location="/Users/ian/tools/caGrid/repository/cglib/cglib/2.1_3/cglib-nodep-2.1_3.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/cglib/cglib/2.1_3/cglib-nodep-2.1_3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="hibernate" name="hibernate" >
+			<revision name="3.0.2" status="integration" pubdate="20081231092909" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" downloaded="false" searched="true" default="false" conf="full" position="24">
+				<license name="LGPL" url="http://www.gnu.org/copyleft/lesser.html"/>
+				<metadata-artifact status="no" details="" size="1051" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/hibernate/hibernate/ivy-3.0.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/hibernate/hibernate/ivy-3.0.2.xml"/>
+				<caller organisation="cacore" name="api" conf="default" rev="3.0.2" callerrev="3.1"/>
+				<artifacts>
+					<artifact name="hibernate3" type="jar" ext="jar" status="no" details="" size="1644723" time="0" location="/Users/ian/tools/caGrid/repository/hibernate/hibernate/3.0.2/hibernate3.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/hibernate/hibernate/3.0.2/hibernate3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="bulkDataTransfer" >
+			<revision name="1.2" status="release" pubdate="20081231093141" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="stubs, client, common" position="11">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="2781" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/bulkDataTransfer/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/bulkDataTransfer/ivy-1.2.xml"/>
+				<caller organisation="caGrid" name="data" conf="utils" rev="1.2" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="caGrid-BulkDataHandler-stubs" type="jar" ext="jar" status="no" details="" size="55310" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/bulkDataTransfer/1.2/caGrid-BulkDataHandler-stubs-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/bulkDataTransfer/1.2/caGrid-BulkDataHandler-stubs-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-BulkDataHandler-common" type="jar" ext="jar" status="no" details="" size="34105" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/bulkDataTransfer/1.2/caGrid-BulkDataHandler-common-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/bulkDataTransfer/1.2/caGrid-BulkDataHandler-common-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-BulkDataHandler-client" type="jar" ext="jar" status="no" details="" size="7173" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/bulkDataTransfer/1.2/caGrid-BulkDataHandler-client-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/bulkDataTransfer/1.2/caGrid-BulkDataHandler-client-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="graph" >
+			<revision name="1.2" status="release" pubdate="20081231093148" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="default" position="19">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="864" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/graph/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/graph/ivy-1.2.xml"/>
+				<caller organisation="caGrid" name="data" conf="tools" rev="1.2" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="caGrid-graph" type="jar" ext="jar" status="no" details="" size="97492" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/graph/1.2/caGrid-graph-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/graph/1.2/caGrid-graph-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="tigris" name="gef" >
+			<revision name="cagrid_modified" status="integration" pubdate="20081231092910" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" downloaded="false" searched="true" default="false" conf="default" position="20">
+				<metadata-artifact status="no" details="" size="860" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/tigris/gef/ivy-cagrid_modified.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/tigris/gef/ivy-cagrid_modified.xml"/>
+				<caller organisation="caGrid" name="graph" conf="default" rev="cagrid_modified" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="gef_modified" type="jar" ext="jar" status="no" details="" size="660937" time="0" location="/Users/ian/tools/caGrid/repository/tigris/gef/cagrid_modified/gef_modified.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/tigris/gef/cagrid_modified/gef_modified.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="introduce" >
+			<revision name="1.2" status="release" pubdate="20081231093133" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="extension, impl-test, extension-test" position="13">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="4528" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/introduce/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/introduce/ivy-1.2.xml"/>
+				<caller organisation="caGrid" name="data" conf="tools, impl-test" rev="1.2" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="caGrid-Introduce-portal" type="jar" ext="jar" status="no" details="" size="684019" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/introduce/1.2/caGrid-Introduce-portal-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/introduce/1.2/caGrid-Introduce-portal-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-Introduce-portal-tests" type="jar" ext="jar" status="no" details="" size="319" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/introduce/1.2/caGrid-Introduce-portal-tests-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/introduce/1.2/caGrid-Introduce-portal-tests-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-Introduce-core-tests" type="jar" ext="jar" status="no" details="" size="117325" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/introduce/1.2/caGrid-Introduce-core-tests-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/introduce/1.2/caGrid-Introduce-core-tests-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-Introduce-core" type="jar" ext="jar" status="no" details="" size="441813" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/introduce/1.2/caGrid-Introduce-core-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/introduce/1.2/caGrid-Introduce-core-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="mobius" name="mobius" >
+			<revision name="1.1" status="integration" pubdate="20081231092909" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" homepage="http://projectmobius.org/" downloaded="false" searched="true" default="false" conf="base, tools, common-client" position="33">
+				<license name="Mobius Software" url="http://projectmobius.org/download.php"/>
+				<metadata-artifact status="no" details="" size="2164" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/mobius/mobius/ivy-1.1.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/mobius/mobius/ivy-1.1.xml"/>
+				<caller organisation="caGrid" name="gts" conf="service" rev="1.1" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="mobius_tools" type="jar" ext="jar" status="no" details="" size="616143" time="0" location="/Users/ian/tools/caGrid/repository/mobius/mobius/1.1/mobius_tools-1.1.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/mobius/mobius/1.1/mobius_tools-1.1.jar"/>
+					</artifact>
+					<artifact name="mobius_common_client" type="jar" ext="jar" status="no" details="" size="140892" time="0" location="/Users/ian/tools/caGrid/repository/mobius/mobius/1.1/mobius_common_client-1.1.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/mobius/mobius/1.1/mobius_common_client-1.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="mysql" name="connector-java" >
+			<revision name="3.0.16-ga-bin" status="integration" pubdate="20081231092909" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" downloaded="false" searched="false" default="false" conf="default" position="32">
+				<metadata-artifact status="no" details="" size="594" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/mysql/connector-java/ivy-3.0.16-ga-bin.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/mysql/connector-java/ivy-3.0.16-ga-bin.xml"/>
+				<caller organisation="cacore" name="csm" conf="auth" rev="3.0.+" callerrev="3.2"/>
+				<caller organisation="caGrid" name="gts" conf="service" rev="3.0.16-ga-bin" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="mysql-connector-java" type="jar" ext="jar" status="no" details="" size="236079" time="0" location="/Users/ian/tools/caGrid/repository/mysql/connector-java/3.0.16-ga-bin/mysql-connector-java-3.0.16-ga-bin.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/mysql/connector-java/3.0.16-ga-bin/mysql-connector-java-3.0.16-ga-bin.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="3.0.16-ga-bin" status="integration" pubdate="20081231092909" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" downloaded="false" searched="true" default="false" conf="default" position="32">
+				<metadata-artifact status="no" details="" size="594" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/mysql/connector-java/ivy-3.0.16-ga-bin.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/mysql/connector-java/ivy-3.0.16-ga-bin.xml"/>
+				<caller organisation="cacore" name="csm" conf="auth" rev="3.0.+" callerrev="3.2"/>
+				<caller organisation="caGrid" name="gts" conf="service" rev="3.0.16-ga-bin" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="mysql-connector-java" type="jar" ext="jar" status="no" details="" size="236079" time="0" location="/Users/ian/tools/caGrid/repository/mysql/connector-java/3.0.16-ga-bin/mysql-connector-java-3.0.16-ga-bin.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/mysql/connector-java/3.0.16-ga-bin/mysql-connector-java-3.0.16-ga-bin.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="douglea" name="concurrent" >
+			<revision name="1.3.4" status="release" pubdate="20040520000000" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" homepage="http://gee.cs.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/concurrent/intro.html" downloaded="false" searched="true" default="false" conf="default" position="34">
+				<license name="Public Domain"/>
+				<metadata-artifact status="no" details="" size="866" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/douglea/concurrent/ivy-1.3.4.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/douglea/concurrent/ivy-1.3.4.xml"/>
+				<caller organisation="mobius" name="mobius" conf="base" rev="1.3.4" callerrev="1.1"/>
+				<artifacts>
+					<artifact name="concurrent" type="jar" ext="jar" status="no" details="" size="423245" time="0" location="/Users/ian/tools/caGrid/repository/douglea/concurrent/1.3.4/concurrent-1.3.4.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/douglea/concurrent/1.3.4/concurrent-1.3.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="codehaus" name="jaxen" >
+			<revision name="1.1" status="release" pubdate="20081231092907" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" homepage="http://ws.apache.org/jaxme/js/index.html" downloaded="false" searched="true" default="false" conf="default" position="16">
+				<license name="BSD-like" url="http://jaxen.org/license.html"/>
+				<metadata-artifact status="no" details="" size="782" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/codehaus/jaxen/ivy-1.1.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/codehaus/jaxen/ivy-1.1.xml"/>
+				<caller organisation="caGrid" name="introduce" conf="extension" rev="1.1" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="jaxen" type="jar" ext="jar" status="no" details="" size="226529" time="0" location="/Users/ian/tools/caGrid/repository/codehaus/jaxen/1.1/jaxen-1.1.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/codehaus/jaxen/1.1/jaxen-1.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="metro" name="xsom" >
+			<revision name="20060901" status="release" pubdate="20081231092909" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" homepage="https://xsom.dev.java.net/" downloaded="false" searched="true" default="false" conf="default" position="17">
+				<license name="CDDL 1.0" url="http://www.opensource.org/licenses/cddl1.php"/>
+				<metadata-artifact status="no" details="" size="1026" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/metro/xsom/ivy-20060901.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/metro/xsom/ivy-20060901.xml"/>
+				<caller organisation="codehaus" name="jaxen" conf="default" rev="20060901" callerrev="1.1"/>
+				<artifacts>
+					<artifact name="xsom14" type="jar" ext="jar" status="no" details="" size="374646" time="0" location="/Users/ian/tools/caGrid/repository/metro/xsom/20060901/xsom14.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/metro/xsom/20060901/xsom14.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="relaxng" name="datatype-java" >
+			<revision name="1.0" status="release" pubdate="20081231092909" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" homepage="https://sourceforge.net/projects/relaxng" downloaded="false" searched="true" default="false" conf="default" position="18">
+				<license name="BSD-like"/>
+				<metadata-artifact status="no" details="" size="684" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/relaxng/datatype-java/ivy-1.0.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/relaxng/datatype-java/ivy-1.0.xml"/>
+				<caller organisation="metro" name="xsom" conf="default" rev="1.0" callerrev="20060901"/>
+				<artifacts>
+					<artifact name="relaxngDatatype" type="jar" ext="jar" status="no" details="" size="19255" time="0" location="/Users/ian/tools/caGrid/repository/relaxng/datatype-java/1.0/relaxngDatatype.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/relaxng/datatype-java/1.0/relaxngDatatype.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="jaxme" name="jaxmejs" >
+			<revision name="0.5.2-patched" status="integration" pubdate="20081231092909" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" homepage="http://ws.apache.org/jaxme/js/index.html" downloaded="false" searched="true" default="false" conf="default" position="14">
+				<license name="Apache" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="1017" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/jaxme/jaxmejs/ivy-0.5.2-patched.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/jaxme/jaxmejs/ivy-0.5.2-patched.xml"/>
+				<caller organisation="caGrid" name="introduce" conf="extension" rev="0.5.2-patched" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="jaxmejs-0.5.2" type="jar" ext="jar" status="no" details="" size="398728" time="0" location="/Users/ian/tools/caGrid/repository/jaxme/jaxmejs/0.5.2-patched/jaxmejs-0.5.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/jaxme/jaxmejs/0.5.2-patched/jaxmejs-0.5.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="antlr" name="antlr" >
+			<revision name="2.7.6rc1" status="release" pubdate="20081231092902" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" homepage="http://www.antlr2.org/" downloaded="false" searched="true" default="false" conf="default" position="15">
+				<license name="ANTLR 2 (Public Domain)" url="http://www.antlr2.org/license.html"/>
+				<metadata-artifact status="no" details="" size="777" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/antlr/antlr/ivy-2.7.6rc1.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/antlr/antlr/ivy-2.7.6rc1.xml"/>
+				<caller organisation="jaxme" name="jaxmejs" conf="default" rev="2.7.+" callerrev="0.5.2-patched"/>
+				<artifacts>
+					<artifact name="antlr" type="jar" ext="jar" status="no" details="" size="444689" time="0" location="/Users/ian/tools/caGrid/repository/antlr/antlr/2.7.6rc1/antlr-2.7.6rc1.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/antlr/antlr/2.7.6rc1/antlr-2.7.6rc1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="advertisement" >
+			<revision name="1.2" status="release" pubdate="20081231092925" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="default" position="30">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="1049" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/advertisement/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/advertisement/ivy-1.2.xml"/>
+				<caller organisation="caGrid" name="syncgts" conf="service" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="authentication-service" conf="service" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="gts" conf="service" rev="1.2" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="caGrid-advertisement" type="jar" ext="jar" status="no" details="" size="17199" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/advertisement/1.2/caGrid-advertisement-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/advertisement/1.2/caGrid-advertisement-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="globus" name="mds" >
+			<revision name="4.0.3" status="integration" pubdate="20081231092908" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" downloaded="false" searched="true" default="false" conf="jars" position="31">
+				<metadata-artifact status="no" details="" size="1627" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/globus/mds/ivy-4.0.3.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/globus/mds/ivy-4.0.3.xml"/>
+				<caller organisation="caGrid" name="advertisement" conf="default" rev="4.0.3" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="globus_wsrf_mds_aggregator" type="jar" ext="jar" status="no" details="" size="46148" time="0" location="/Users/ian/tools/caGrid/repository/globus/mds/4.0.3/globus_wsrf_mds_aggregator.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/globus/mds/4.0.3/globus_wsrf_mds_aggregator.jar"/>
+					</artifact>
+					<artifact name="globus_wsrf_servicegroup_stubs" type="jar" ext="jar" status="no" details="" size="57989" time="0" location="/Users/ian/tools/caGrid/repository/globus/mds/4.0.3/globus_wsrf_servicegroup_stubs.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/globus/mds/4.0.3/globus_wsrf_servicegroup_stubs.jar"/>
+					</artifact>
+					<artifact name="globus_wsrf_servicegroup" type="jar" ext="jar" status="no" details="" size="35298" time="0" location="/Users/ian/tools/caGrid/repository/globus/mds/4.0.3/globus_wsrf_servicegroup.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/globus/mds/4.0.3/globus_wsrf_servicegroup.jar"/>
+					</artifact>
+					<artifact name="globus_wsrf_mds_aggregator_stubs" type="jar" ext="jar" status="no" details="" size="67062" time="0" location="/Users/ian/tools/caGrid/repository/globus/mds/4.0.3/globus_wsrf_mds_aggregator_stubs.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/globus/mds/4.0.3/globus_wsrf_mds_aggregator_stubs.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="grape" >
+			<revision name="1.2" status="release" pubdate="20081231093022" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="default" position="21">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="989" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/grape/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/grape/ivy-1.2.xml"/>
+				<caller organisation="caGrid" name="data" conf="tools" rev="1.2" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="caGrid-grape" type="jar" ext="jar" status="no" details="" size="227042" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/grape/1.2/caGrid-grape-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/grape/1.2/caGrid-grape-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-grape-resources" type="jar" ext="jar" status="no" details="" size="34091" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/grape/1.2/caGrid-grape-resources-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/grape/1.2/caGrid-grape-resources-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="gridca" >
+			<revision name="1.2" status="release" pubdate="20081231092937" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="default" position="27">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="1143" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/gridca/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/gridca/ivy-1.2.xml"/>
+				<caller organisation="caGrid" name="syncgts" conf="service, client" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="authentication-service" conf="service" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="gts" conf="service, client" rev="1.2" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="caGrid-gridca" type="jar" ext="jar" status="no" details="" size="62468" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/gridca/1.2/caGrid-gridca-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/gridca/1.2/caGrid-gridca-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="eracom" name="protecttoolkit-j" >
+			<revision name="jce-1.2" status="integration" pubdate="20081231092908" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" downloaded="false" searched="true" default="false" conf="default" position="28">
+				<metadata-artifact status="no" details="" size="1014" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/eracom/protecttoolkit-j/ivy-jce-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/eracom/protecttoolkit-j/ivy-jce-1.2.xml"/>
+				<caller organisation="caGrid" name="gridca" conf="default" rev="jce-1.2" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="jprov" type="jar" ext="jar" status="no" details="" size="764006" time="0" location="/Users/ian/tools/caGrid/repository/eracom/protecttoolkit-j/jce-1.2/jprov.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/eracom/protecttoolkit-j/jce-1.2/jprov.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="wsEnum" >
+			<revision name="1.2" status="release" pubdate="20081231093010" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="stubs, default" position="12">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="2242" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/wsEnum/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/wsEnum/ivy-1.2.xml"/>
+				<caller organisation="caGrid" name="data" conf="service" rev="1.2" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="caGrid-wsEnum-stubs" type="jar" ext="jar" status="no" details="" size="72497" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/wsEnum/1.2/caGrid-wsEnum-stubs-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/wsEnum/1.2/caGrid-wsEnum-stubs-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-wsEnum" type="jar" ext="jar" status="no" details="" size="53664" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/wsEnum/1.2/caGrid-wsEnum-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/wsEnum/1.2/caGrid-wsEnum-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="service-security-provider" >
+			<revision name="1.2" status="release" pubdate="20081231092935" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="service, client" position="10">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="1476" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/service-security-provider/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/service-security-provider/ivy-1.2.xml"/>
+				<caller organisation="caGrid" name="syncgts" conf="service, client" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="authentication-service" conf="service, client" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="bulkDataTransfer" conf="client" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="gts" conf="service, client" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="data" conf="service, utils" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="wsEnum" conf="default" rev="1.2" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="caGrid-ServiceSecurityProvider-common" type="jar" ext="jar" status="no" details="" size="2006" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/service-security-provider/1.2/caGrid-ServiceSecurityProvider-common-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/service-security-provider/1.2/caGrid-ServiceSecurityProvider-common-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-ServiceSecurityProvider-stubs" type="jar" ext="jar" status="no" details="" size="17984" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/service-security-provider/1.2/caGrid-ServiceSecurityProvider-stubs-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/service-security-provider/1.2/caGrid-ServiceSecurityProvider-stubs-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-ServiceSecurityProvider-client" type="jar" ext="jar" status="no" details="" size="9629" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/service-security-provider/1.2/caGrid-ServiceSecurityProvider-client-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/service-security-provider/1.2/caGrid-ServiceSecurityProvider-client-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-ServiceSecurityProvider-service" type="jar" ext="jar" status="no" details="" size="4863" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/service-security-provider/1.2/caGrid-ServiceSecurityProvider-service-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/service-security-provider/1.2/caGrid-ServiceSecurityProvider-service-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="cql" >
+			<revision name="1.2" status="release" pubdate="20081231093152" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="cql2-schemas, schemas, cql2, cql-schemas, cql, jars, test" position="8">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="1993" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/ivy-1.2.xml"/>
+				<caller organisation="caGrid" name="data" conf="service-schemas, service, extension-schemas" rev="1.2" callerrev="1.2"/>
+				<caller organisation="org.cagrid.ivyexamples" name="discovery" conf="default" rev="1.2" callerrev="working@Macintosh-20.local"/>
+				<artifacts>
+					<artifact name="1_gov.nih.nci.cagrid.CQLResultSet" type="xsd" ext="xsd" status="no" details="" size="3472" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/1_gov.nih.nci.cagrid.CQLResultSet-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/1_gov.nih.nci.cagrid.CQLResultSet-1.2.xsd"/>
+					</artifact>
+					<artifact name="caGrid-CQL-cql.1.0" type="jar" ext="jar" status="no" details="" size="50372" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/caGrid-CQL-cql.1.0-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/caGrid-CQL-cql.1.0-1.2.jar"/>
+					</artifact>
+					<artifact name="1_gov.nih.nci.cagrid.CQLQuery" type="xsd" ext="xsd" status="no" details="" size="4391" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/1_gov.nih.nci.cagrid.CQLQuery-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/1_gov.nih.nci.cagrid.CQLQuery-1.2.xsd"/>
+					</artifact>
+					<artifact name="AssociationPopulationSpec" type="xsd" ext="xsd" status="no" details="" size="1536" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/AssociationPopulationSpec-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/AssociationPopulationSpec-1.2.xsd"/>
+					</artifact>
+					<artifact name="CQLQueryComponents" type="xsd" ext="xsd" status="no" details="" size="3064" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/CQLQueryComponents-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/CQLQueryComponents-1.2.xsd"/>
+					</artifact>
+					<artifact name="CQLQueryModifier" type="xsd" ext="xsd" status="no" details="" size="1352" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/CQLQueryModifier-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/CQLQueryModifier-1.2.xsd"/>
+					</artifact>
+					<artifact name="CQLQueryResults" type="xsd" ext="xsd" status="no" details="" size="3005" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/CQLQueryResults-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/CQLQueryResults-1.2.xsd"/>
+					</artifact>
+					<artifact name="Aggregations" type="xsd" ext="xsd" status="no" details="" size="818" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/Aggregations-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/Aggregations-1.2.xsd"/>
+					</artifact>
+					<artifact name="caGrid-CQL-tests" type="jar" ext="jar" status="no" details="" size="2125" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/caGrid-CQL-tests-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/caGrid-CQL-tests-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-CQL-cql.2.0" type="jar" ext="jar" status="no" details="" size="82865" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/caGrid-CQL-cql.2.0-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/caGrid-CQL-cql.2.0-1.2.jar"/>
+					</artifact>
+					<artifact name="CQLAttribute" type="xsd" ext="xsd" status="no" details="" size="1945" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/CQLAttribute-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/CQLAttribute-1.2.xsd"/>
+					</artifact>
+					<artifact name="Predicates" type="xsd" ext="xsd" status="no" details="" size="1096" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/Predicates-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/cql/1.2/Predicates-1.2.xsd"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="discovery" >
+			<revision name="1.2" status="release" pubdate="20081231093313" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="default, test" position="0">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="1276" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/discovery/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/discovery/ivy-1.2.xml"/>
+				<caller organisation="org.cagrid.ivyexamples" name="discovery" conf="default" rev="1.2" callerrev="working@Macintosh-20.local"/>
+				<artifacts>
+					<artifact name="caGrid-discovery-tests" type="jar" ext="jar" status="no" details="" size="13863" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/discovery/1.2/caGrid-discovery-tests-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/discovery/1.2/caGrid-discovery-tests-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-discovery" type="jar" ext="jar" status="no" details="" size="13010" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/discovery/1.2/caGrid-discovery-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/discovery/1.2/caGrid-discovery-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="metadatautils" >
+			<revision name="1.2" status="release" pubdate="20081231093147" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="default" position="4">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="1321" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadatautils/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadatautils/ivy-1.2.xml"/>
+				<caller organisation="caGrid" name="discovery" conf="default" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="data" conf="validation" rev="1.2" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="caGrid-metadatautils" type="jar" ext="jar" status="no" details="" size="38510" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadatautils/1.2/caGrid-metadatautils-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadatautils/1.2/caGrid-metadatautils-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="jasciidammit" name="jasciidammit" >
+			<revision name="1.1" status="integration" pubdate="20081231092909" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" homepage="http://sourceforge.net/projects/jasciidammit" downloaded="false" searched="true" default="false" conf="default" position="6">
+				<license name="LGPL" url="http://www.gnu.org/licenses/lgpl.html"/>
+				<metadata-artifact status="no" details="" size="609" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/jasciidammit/jasciidammit/ivy-1.1.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/jasciidammit/jasciidammit/ivy-1.1.xml"/>
+				<caller organisation="caGrid" name="metadatautils" conf="default" rev="1.1" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="jasciidammit" type="jar" ext="jar" status="no" details="" size="6843" time="0" location="/Users/ian/tools/caGrid/repository/jasciidammit/jasciidammit/1.1/jasciidammit-1.1.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/jasciidammit/jasciidammit/1.1/jasciidammit-1.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="testing" >
+			<revision name="1.2" status="release" pubdate="20081231093025" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="core, system" position="22">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="1208" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/testing/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/testing/ivy-1.2.xml"/>
+				<caller organisation="caGrid" name="introduce" conf="impl-test" rev="1.2" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="caGrid-testing-system" type="jar" ext="jar" status="no" details="" size="81633" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/testing/1.2/caGrid-testing-system-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/testing/1.2/caGrid-testing-system-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-testing-core" type="jar" ext="jar" status="no" details="" size="2181" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/testing/1.2/caGrid-testing-core-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/testing/1.2/caGrid-testing-core-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="metadata" >
+			<revision name="1.2" status="release" pubdate="20081231092930" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="common.jars, schemas, security.schemas, security.jars, data.jars, jars" position="5">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="1916" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/ivy-1.2.xml"/>
+				<caller organisation="caGrid" name="syncgts" conf="service, client" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="discovery" conf="test" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="authentication-service" conf="service, client" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="bulkDataTransfer" conf="client" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="service-security-provider" conf="service, client" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="gts" conf="service, client" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="data" conf="service-schemas, utils" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="wsEnum" conf="default" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="metadatautils" conf="default" rev="1.2" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="cagrid/types/service/servicemodel" type="xsd" ext="xsd" status="no" details="" size="7147" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/1.2/cagrid/types/service/servicemodel-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/1.2/cagrid/types/service/servicemodel-1.2.xsd"/>
+					</artifact>
+					<artifact name="caGrid-metadata-common" type="jar" ext="jar" status="no" details="" size="107334" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/1.2/caGrid-metadata-common-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/1.2/caGrid-metadata-common-1.2.jar"/>
+					</artifact>
+					<artifact name="cagrid/types/caGridMetadata" type="xsd" ext="xsd" status="no" details="" size="1453" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/1.2/cagrid/types/caGridMetadata-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/1.2/cagrid/types/caGridMetadata-1.2.xsd"/>
+					</artifact>
+					<artifact name="caGrid-metadata-security" type="jar" ext="jar" status="no" details="" size="28511" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/1.2/caGrid-metadata-security-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/1.2/caGrid-metadata-security-1.2.jar"/>
+					</artifact>
+					<artifact name="cagrid/types/data/data" type="xsd" ext="xsd" status="no" details="" size="4040" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/1.2/cagrid/types/data/data-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/1.2/cagrid/types/data/data-1.2.xsd"/>
+					</artifact>
+					<artifact name="caGrid-metadata-data" type="jar" ext="jar" status="no" details="" size="36848" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/1.2/caGrid-metadata-data-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/1.2/caGrid-metadata-data-1.2.jar"/>
+					</artifact>
+					<artifact name="cagrid/types/common/common" type="xsd" ext="xsd" status="no" details="" size="6246" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/1.2/cagrid/types/common/common-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/1.2/cagrid/types/common/common-1.2.xsd"/>
+					</artifact>
+					<artifact name="cagrid/types/security/security" type="xsd" ext="xsd" status="no" details="" size="2998" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/1.2/cagrid/types/security/security-1.2.xsd">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/metadata/1.2/cagrid/types/security/security-1.2.xsd"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="caGrid" name="core" >
+			<revision name="1.2" status="release" pubdate="20081231092923" resolver="caGrid-local-fs-fs" artresolver="caGrid-local-fs-fs" downloaded="false" searched="true" default="false" conf="impl-test, default, test" position="1">
+				<license name="caGrid" url="http://www.cagrid.org/wiki/CaGrid:LICENSE-1.2"/>
+				<metadata-artifact status="no" details="" size="1403" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/integration-repository/caGrid/core/ivy-1.2.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/integration-repository/caGrid/core/ivy-1.2.xml"/>
+				<caller organisation="caGrid" name="cql" conf="test" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="testing" conf="core" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="discovery" conf="default, test" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="authentication-service" conf="service, impl-test" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="grape" conf="default" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="service-security-provider" conf="service, client" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="gts" conf="service" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="introduce" conf="extension, impl-test" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="syncgts" conf="service, impl-test" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="gridca" conf="default" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="advertisement" conf="default" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="data" conf="service, tools, impl-test" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="metadatautils" conf="default" rev="1.2" callerrev="1.2"/>
+				<caller organisation="caGrid" name="wsEnum" conf="default" rev="1.2" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="caGrid-core-tests" type="jar" ext="jar" status="no" details="" size="16571" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/core/1.2/caGrid-core-tests-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/core/1.2/caGrid-core-tests-1.2.jar"/>
+					</artifact>
+					<artifact name="caGrid-core" type="jar" ext="jar" status="no" details="" size="84777" time="0" location="/Users/ian/tools/caGrid/integration-repository/caGrid/core/1.2/caGrid-core-1.2.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/integration-repository/caGrid/core/1.2/caGrid-core-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="clarkware" name="jdepend" >
+			<revision name="2.7" status="integration" pubdate="20081231092907" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" homepage="http://clarkware.com/software/JDepend.html" downloaded="false" searched="true" default="false" conf="default" position="7">
+				<metadata-artifact status="no" details="" size="600" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/clarkware/jdepend/ivy-2.7.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/clarkware/jdepend/ivy-2.7.xml"/>
+				<caller organisation="caGrid" name="core" conf="impl-test" rev="2.7" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="jdepend" type="jar" ext="jar" status="no" details="" size="433994" time="0" location="/Users/ian/tools/caGrid/repository/clarkware/jdepend/2.7/jdepend-2.7.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/clarkware/jdepend/2.7/jdepend-2.7.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="jdom" name="jdom" >
+			<revision name="1.0" status="release" pubdate="20081231092909" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" downloaded="false" searched="true" default="false" conf="default" position="3">
+				<metadata-artifact status="no" details="" size="338" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/jdom/jdom/ivy-1.0.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/jdom/jdom/ivy-1.0.xml"/>
+				<caller organisation="caGrid" name="testing" conf="core" rev="1.0" callerrev="1.2"/>
+				<caller organisation="caGrid" name="syncgts" conf="service" rev="1.0" callerrev="1.2"/>
+				<caller organisation="caGrid" name="core" conf="default" rev="1.0" callerrev="1.2"/>
+				<caller organisation="caGrid" name="authentication-service" conf="service" rev="1.0" callerrev="1.2"/>
+				<caller organisation="caGrid" name="gridca" conf="default" rev="1.0" callerrev="1.2"/>
+				<caller organisation="mobius" name="mobius" conf="base" rev="1.0" callerrev="1.1"/>
+				<caller organisation="cacore" name="csm" conf="auth" rev="1.0" callerrev="3.2"/>
+				<caller organisation="caGrid" name="gts" conf="service" rev="1.0" callerrev="1.2"/>
+				<caller organisation="caGrid" name="introduce" conf="extension" rev="1.0" callerrev="1.2"/>
+				<caller organisation="caGrid" name="data" conf="service" rev="1.0" callerrev="1.2"/>
+				<caller organisation="caGrid" name="wsEnum" conf="default" rev="1.0" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="jdom" type="jar" ext="jar" status="no" details="" size="153253" time="0" location="/Users/ian/tools/caGrid/repository/jdom/jdom/1.0/jdom-1.0.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/jdom/jdom/1.0/jdom-1.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="castor" name="castor" >
+			<revision name="0.9.9" status="integration" pubdate="20081231092907" resolver="caGrid-fs-fs" artresolver="caGrid-fs-fs" downloaded="false" searched="true" default="false" conf="default" position="2">
+				<license name="Apache" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="429" time="0" searched="true" original-local-location="/Users/ian/tools/caGrid/repository/castor/castor/ivy-0.9.9.xml" origin-is-local="true" origin-location="/Users/ian/tools/caGrid/repository/castor/castor/ivy-0.9.9.xml"/>
+				<caller organisation="caGrid" name="core" conf="default" rev="0.9.9" callerrev="1.2"/>
+				<artifacts>
+					<artifact name="castor" type="jar" ext="jar" status="no" details="" size="1910121" time="0" location="/Users/ian/tools/caGrid/repository/castor/castor/0.9.9/castor-0.9.9.jar">
+						<origin-location is-local="true" location="/Users/ian/tools/caGrid/repository/castor/castor/0.9.9/castor-0.9.9.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

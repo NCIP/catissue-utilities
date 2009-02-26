@@ -1,0 +1,87 @@
+<!-- Build file is based on the caGrid example code - ivyexamples-discovery -->
+<project name="caGridLogger" default="run">
+
+	<property name="lib.dir" value="lib" />
+	<property name="build.dir" value="build" />
+	<property name="src.dir" value="src" />
+
+	<property environment="env" />
+	<property name="globus.dir" value="${env.GLOBUS_LOCATION}" />
+	<property name="jdbc.dir" value="/Users/ian/tools/FMPjdbc/driver/lib" />
+	
+	<property name="username" value="dorian" />
+	<property name="password" value="alfred" />
+	
+	<fail unless="env.GLOBUS_LOCATION" message="You must set the environment variable GLOBUS_LOCATION to the directory in which you have Globus installed." />
+
+
+	<path id="lib.path.id">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${globus.dir}/lib">
+			<include name="*.jar" />
+			<exclude name="caGrid-*.jar" />
+		</fileset>
+	</path>
+	
+	<path id="run.path.id">
+		<path refid="lib.path.id" />
+		<path location="${build.dir}" />
+		<path location="${globus.dir}" />
+		<fileset dir="${jdbc.dir}">
+				<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<target name="run" depends="compile" description="--> compile and run the project">
+
+		<java classpathref="run.path.id" classname="gridexamples.ListServices" >
+			<arg value="${username}"/>
+			<arg value="${password}"/>
+			
+			<arg value="nci_prod-1.2"/>
+			<!--arg value="training-1.2"/-->
+			
+			<arg value="CaTissueSuite"/>
+			<arg value="Washu-CaTissueSuite"/>
+			<!--arg value="CaArraySvc"/-->
+			<!--arg value="CaNanoLabService"/-->
+			<!--arg value="Cpas2008122601"/-->
+			<!--arg value="CaTissueCore"/-->
+			
+		</java>
+	</target>
+	
+	<target name="compile" description="--> compile and run the project">
+		<mkdir dir="${build.dir}" />
+		<javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="lib.path.id" debug="on"/>
+	</target>
+	
+	<target name="runCP" depends="compile" description="--> compile and run the project">
+		<java classpathref="run.path.id" classname="gridexamples.QueryCPs" >
+			<arg value="${username}"/>
+			<arg value="${password}"/>
+			
+			<arg value="nci_prod-1.2"/>
+			<!--arg value="training-1.2"/-->
+			
+			<!--arg value="Washu-CaTissueSuite"/-->
+			<arg value="CaTissueSuite"/>
+		</java>
+	</target>
+	
+	<target name="runLogin" depends="clean" description="--> compile and run the project">
+		<mkdir dir="${build.dir}" />
+		<javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="lib.path.id" />
+		<!--java classpathref="run.path.id" classname="gridexamples.gridLoginClient" -->
+		<java classpathref="run.path.id" classname="org.cagrid.gridLoginClient" >
+				<arg value="${username}"/>
+			<arg value="${password}"/>
+		</java>
+	</target>
+	
+	<target name="clean" description="--> cleans the project">
+		<delete dir="${build.dir}" failonerror="false" />
+	</target>
+</project>
