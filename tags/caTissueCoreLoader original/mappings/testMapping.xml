@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<columnMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="caTissueTextMap.xsd"
+    headerRow ="false" rowClass="Participant"  fileType="xlText" >
+    
+    <column attributeName="gender" columnNo="3">
+        <valueMap fromValue="F" ignoreCase="true" toValue="Female Gender"/>
+        <valueMap fromValue="M" ignoreCase="true" toValue="Male Gender"/>
+        <valueMap fromValue="Female" ignoreCase="true" toValue="Female Gender"/>
+        <valueMap fromValue="Male" ignoreCase="true" toValue="Male Gender"/>
+    </column>
+</columnMap>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <valueMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../textdata/caTissueTextMap.xsd">
+        <valueMap fromValue='Hispanic or Latino' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Spaniard' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Andalusian' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Asturian' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Castillian' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Catalonian' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Belearic Islander' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Gallego' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Valencian' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Canarian' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Spanish Basque' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Mexican' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Mexican American' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Mexicano' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Chicano' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='La Raza' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Mexican American Indian' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Central American' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Costa Rican' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Guatemalan' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Honduran' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Nicaraguan' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Panamanian' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Salvadoran' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Central American Indian' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Canal Zone' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='South American' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Argentinean' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Bolivian' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Chilean' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Colombian' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Ecuadorian' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Paraguayan' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Peruvian' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Uruguayan' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Venezuelan' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='South American Indian' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Criollo' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Latin American' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Puerto Rican' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Cuban' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Dominican' ignoreCase='true' toValue='Hispanic or Latino'/>
+        <valueMap fromValue='Not Hispanic or Latino' ignoreCase='true' toValue='Not Hispanic or Latino'/>
+    </valueMapping>
