@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<columnMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../xml/caTissueTextMap.xsd" 
+    headerRow="true"
+    fileType="xlText">
+
+    <dateFormat>yyyyMMdd</dateFormat>
+    <rowClass>Participant</rowClass>
+    <column attributeName="firstName" columnNo="1"/>
+    <column attributeName="lastName" columnNo="3"/>
+    <column attributeName="middleName" columnNo="2"/>
+    <column attributeName="birthDate" columnNo="7"/>
+    <column attributeName="protocolTitle" fixedValue="LITS Interop demo protoco"/>
+    <column attributeName="PPI" columnNo="14"/>
+    <column attributeName="medicalRecordNumber" columnNo="14"/>
+    <column attributeName="participantActivityStatus" fixedValue="Active"/>
+    <column attributeName="regActivityStatus" fixedValue="Active"/>
+    <column attributeName="siteName" fixedValue="LITS Interop Clinic"/>
+
+</columnMap>

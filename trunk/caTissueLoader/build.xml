@@ -4,62 +4,106 @@
 
 <project name="caTissue Text File Loader" default="compile">
 
-	<!-- edit these properties for a particular load of data -->	
-	<property name="catissue.instance" value="MacBook" />
-	<property name="keychain.file" value="./conf/caTissueKeychain.xml" />
-	<property name="data.file" value="./examples/Patient2Cols.txt" />
-	<property name="map.file" value="./examples/Patient2ColsMap.xml" />
+	<!--property name="caTissueClient.dir" value="/Users/ian/tools/caTissueSuite_RC3Client"/-->
+	<!--property name="caTissueClient.dir" value="/Users/ian/dev/caTissue_Suite_v1_1/caTissueSuite_Client"/-->
+	<property name="caTissueClient.dir" value="/Users/ian/apps/caTissue_Suite_v1_1/caTissueSuite_Client"/>
+	
+	<!-- edit these properties for a particular load of data -->
+	<property name="catissue.instance" value="Wash U 1.1.2 demo"/>
+	<property name="keychain.file" value="./conf/caTissueKeychain.xml"/>
+	
+	<!--property name="data.file" value="/Users/ian/dev/LITS/interop_patient_demographics10.txt"/>
+	<property name="map.file" value="./examples/LitsPatientColMap.xml"/-->
+	
+	<!--property name="data.file" value="./examples/SpecimenText.txt"/>
+		<property name="map.file" value="./examples/SpecimenTextMap.xml"/-->
+	
+	<!--property name="data.file" value="./examples/SpecimenUpdate.txt"/>
+		<property name="map.file" value="./examples/SCGTextMap.xml"/-->
+	
+	<property name="data.file" value="./examples/30patients2.txt"/>
+	<property name="map.file" value="./examples/PatientTextMap.xml"/>
+	
+	<!--property name="data.file" value="./examples/Patient2Cols20.txt"/>
+		<property name="map.file" value="./examples/Patient2ColsMap.xml"/-->
+	
 	<!--property name="baddata.file" value="./textdata/badData/bad10patients2.txt" /-->
+
+
+	<property name="order.file" value="./examples/orderExport.txt"/>
+	<property name="order.name" value="Order 5"/>
 	
-	<!--define require dir and Properties -->	
-	<property name="base.dir" value="."/>	
-	<property name="conf.dir" value="conf" />
-	<property name="lib.dir" value="lib" />
-	<property name="src.dir" value="src" />
-	<property name="bin.dir" value="bin" />
-	<property name="gen.dir" value="gen-src" />
-		
-	<property name="mapxsd.file" value="../xml/caTissueTextMap.xsd" />
+	<!--define require dir and Properties -->
+	<property name="base.dir" value="."/>
+	<property name="conf.dir" value="conf"/>
+	<property name="lib.dir" value="lib"/>
+	<property name="jaxblib.dir" value="lib/jaxb"/>
+	<property name="src.dir" value="src"/>
+	<property name="bin.dir" value="bin"/>
+	<property name="gen.dir" value="gen-src"/>
+	<property name="dist.dir" value="dist"/>
 	
+	<property name="mapxsd.file" value="../xml/caTissueTextMap.xsd"/>
+
 	<path id="cp">
-		<fileset dir="lib">
+		<!--fileset dir="lib">
+			<include name="**/*.jar"/>
+		</fileset-->
+		<fileset dir="${caTissueClient.dir}/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${jaxblib.dir}">
 			<include name="**/*.jar"/>
 		</fileset>
 		<pathelement path="${bin.dir}"/>
 		<pathelement path="${conf.dir}"/>
 	</path>
-    	
+
 	<taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask">
 		<classpath refid="cp"/>
 	</taskdef>
 
-	<target name="init" >
-		<tstamp />
-		<mkdir dir="${bin.dir}" />
-		<mkdir dir="${gen.dir}" />
-		<!--mkdir dir="${dist}" /-->
+	<target name="init">
+		<tstamp/>
+		<mkdir dir="${bin.dir}"/>
+		<mkdir dir="${gen.dir}"/>
 	</target>
-	
-	<target name="validateMapping">		
+
+	<target name="validateMapping">
 		<xmlvalidate file="${map.file}" failonerror="yes" lenient="no" warn="no">
 			<attribute name="http://xml.org/sax/features/validation" value="true"/>
-			<attribute name="http://apache.org/xml/features/validation/schema"  value="true"/>
+			<attribute name="http://apache.org/xml/features/validation/schema" value="true"/>
 			<attribute name="http://xml.org/sax/features/namespaces" value="true"/>
 			<property
 				name="http://apache.org/xml/properties/schema/external-noNamespaceSchemaLocation"
 				value="${mapxsd.file}"/>
-		</xmlvalidate>	
-	</target>	
-	
+		</xmlvalidate>
+	</target>
+
 	<!-- run the loader program -->
-	<target name="loadData" depends="compile">		
+	<target name="loadData" depends="compile">
 		<java classname="loader.LoadFromText" fork="true">
 			<classpath refid="cp"/>
 			<!--classpath>
 				<pathelement location="${src.dir}"/>
 				</classpath-->
-			<sysproperty key="log4j.configuration"
-				value="${conf.dir}/client_log4j.properties"/>
+			<sysproperty key="log4j.configuration" value="${conf.dir}/client_log4j.properties"/>
+			<arg value="${catissue.instance}"/>
+			<arg value="${keychain.file}"/>
+			<arg value="${data.file}"/>
+			<arg value="${map.file}"/>
+			<!--arg value="${baddata.file}"/-->
+		</java>
+	</target>
+
+	<!-- run the update loader program -->
+	<target name="updateData" depends="compile">
+		<java classname="loader.UpdateFromText" fork="true">
+			<classpath refid="cp"/>
+			<!--classpath>
+				<pathelement location="${src.dir}"/>
+				</classpath-->
+			<sysproperty key="log4j.configuration" value="${conf.dir}/client_log4j.properties"/>
 			<arg value="${catissue.instance}"/>
 			<arg value="${keychain.file}"/>
 			<arg value="${data.file}"/>
@@ -68,62 +112,120 @@
 		</java>
 	</target>
 	
-	<!--generate Java source files from XML Schema-->
-	<target name="generate" description="Generate Java source files from XML schema file" depends="init">
-		<echo message="Generating source from XML schema ..." />
-		<xjc schema="xml/caTissueTextMap.xsd" package="loader" target="${gen.dir}">
-			<produces dir="${gen.dir}/loader" includes="**/*.java" />
-		</xjc>
-		<xjc schema="xml/caTissueKeyChain.xsd" package="keychain" target="${gen.dir}">
-			<produces dir="${gen.dir}/keychain" includes="**/*.java" />
-		</xjc>
+	<!-- run the order exporter program -->
+	<target name="exportOrder" depends="compile">
+		<java classname="orderexport.OrderExporter" fork="true">
+			<classpath refid="cp"/>
+			<!--classpath>
+				<pathelement location="${src.dir}"/>
+				</classpath-->
+			<sysproperty key="log4j.configuration" value="${conf.dir}/client_log4j.properties"/>
+			<arg value="${catissue.instance}"/>
+			<arg value="${keychain.file}"/>
+			<arg value="${order.name}"/>
+			<arg value="${order.file}"/>
+			<!--arg value="${baddata.file}"/-->
+		</java>
 	</target>
 	
-    <!-- Compile all files, generated and hand-written -->
-	<target name="compile" depends="generate">
-		<javac destdir="${bin.dir}" includes="**/*.*" includeAntRuntime="false">
+	<!--generate Java source files from XML Schema-->
+	<target name="generate" description="Generate Java source files from XML schema file"
+		depends="init">
+		<echo message="Generating source from XML schema ..."/>
+		<xjc schema="xml/caTissueTextMap.xsd" package="loader" target="${gen.dir}">
+			<produces dir="${gen.dir}/loader" includes="**/*.java"/>
+		</xjc>
+		<xjc schema="xml/caTissueKeyChain.xsd" package="keychain" target="${gen.dir}">
+			<produces dir="${gen.dir}/keychain" includes="**/*.java"/>
+		</xjc>
+	</target>
+
+	<!-- Compile all files, generated and hand-written -->
+	<target name="compile" depends="generate" >
+		<javac destdir="${bin.dir}" includes="**/*.*" includeAntRuntime="false" debug="on">
 			<src path="${src.dir}"/>
 			<src path="${gen.dir}"/>
 			<classpath>
-				<fileset dir="${lib.dir}">
+				<!--fileset dir="lib">
 					<include name="**/*.jar"/>
-				</fileset>				
+					</fileset-->
+				<fileset dir="${jaxblib.dir}">
+					<include name="**/*.jar"/>
+				</fileset>
+				<fileset dir="${caTissueClient.dir}/lib">
+					<include name="**/*.jar"/>
+				</fileset>
 			</classpath>
 		</javac>
-		
+
 		<copy todir="${bin.dir}">
 			<fileset dir="${gen.dir}">
-				<include name="**/*.properties" />
-				<include name="**/bgm.ser" />
+				<include name="**/*.properties"/>
+				<include name="**/bgm.ser"/>
 			</fileset>
 		</copy>
-				
+
 	</target>
-	
+
 	<!-- ===================================== -->
 	<!-- Remove build directories -->
 	<!-- ===================================== -->
-	<target name="clean" >
-		<delete dir="${bin.dir}" />
-		<delete dir="${gen.dir}" />
-		<!--delete dir="${dist}" /-->
+	<target name="clean">
+		<delete dir="${bin.dir}"/>
+		<delete dir="${gen.dir}"/>
+		<delete dir="${dist.dir}"/>
 	</target>
-	
+
 	<!-- ===================================== -->
 	<!-- Validates all the mappings in the textdata folder-->
 	<!-- ===================================== -->
-	<target name="validateAllMappings">		
-		<xmlvalidate  failonerror="np" lenient="no" warn="no">
+	<target name="validateAllMappings">
+		<xmlvalidate failonerror="np" lenient="no" warn="no">
 			<fileset dir="./textdata" includes="**/*.xml"/>
 			<attribute name="http://xml.org/sax/features/validation" value="true"/>
-			<attribute name="http://apache.org/xml/features/validation/schema"  value="true"/>
+			<attribute name="http://apache.org/xml/features/validation/schema" value="true"/>
 			<attribute name="http://xml.org/sax/features/namespaces" value="true"/>
 			<property
 				name="http://apache.org/xml/properties/schema/external-noNamespaceSchemaLocation"
 				value="${mapxsd.file}"/>
-		</xmlvalidate>	
-	</target>	
+		</xmlvalidate>
+	</target>
+
+
+	<!-- ===================================== -->
+	<!-- Package keychain into a distribution -->
+	<!-- ===================================== -->
+	<target name="packageKeychain" depends="compile">
+		<mkdir dir="${dist.dir}"/>
+		<property name="version.num" value="1.00"/>
+		<buildnumber file="build.num"/>
+		<jar destfile="${dist.dir}/caTissueKeychain.jar" >
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Implementation-Version" value="${version.num}-b${build.number}"/>
+			</manifest>
+			<fileset dir="${bin.dir}">
+				<include name="**/keychain/**"/>
+			</fileset>
+		</jar>
+	<copy todir="${dist.dir}">
+		<fileset dir="${lib.dir}">
+			<include name="jaxb/jaxb-api.jar"/>
+			<include name="jaxb/jaxb-impl.jar"/>
+			<include name="jaxb/jaxb-libs.jar"/>
+			<!--include name="jaxb-xjc.jar"/-->
+			<!--include name="jaxp-api.jar"/-->
+			<!--include name="sax.jar"/-->
+			<!--include name="dom.jar"/-->
+			<!--include name="xalan.jar"/-->
+			<include name="jaxb/jax-qname.jar"/>
+			<include name="jaxb/namespace.jar"/>
+			<include name="jaxb/xsdlib.jar"/>
+			<include name="jaxb/relaxngDataype.jar"/>
+		</fileset>
+	</copy>
+	</target>
 	
-	
-	
+
+
 </project>
