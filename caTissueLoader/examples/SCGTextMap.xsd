@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="columnMap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="dateFormat"/>
+        <xs:element ref="rowClass"/>
+        <xs:element maxOccurs="unbounded" ref="column"/>
+      </xs:sequence>
+      <xs:attribute name="fileType" use="required" type="xs:NCName"/>
+      <xs:attribute name="headerRow" use="required" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dateFormat" type="xs:string"/>
+  <xs:element name="rowClass" type="xs:NCName"/>
+  <xs:element name="column">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="valueMapping"/>
+      </xs:sequence>
+      <xs:attribute name="attributeName" use="required" type="xs:NCName"/>
+      <xs:attribute name="columnNo" type="xs:integer"/>
+      <xs:attribute name="fixedValue"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="valueMapping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="valueMap"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="valueMap">
+    <xs:complexType>
+      <xs:attribute name="fromValue" use="required"/>
+      <xs:attribute name="ignoreCase" use="required" type="xs:boolean"/>
+      <xs:attribute name="toValue" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

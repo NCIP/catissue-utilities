@@ -4,8 +4,8 @@
  headerRow="true"
  fileType="xlText">
     <dateFormat>MM/dd/yyyy</dateFormat>
-    <rowClass>Specimen</rowClass>
     <rowClass>SpecimenCollectionGroup</rowClass>
+    <rowClass>Specimen</rowClass>
     <column attributeName="protocolTitle" fixedValue="Demo of collection protocol"/>
     <column attributeName="PPI" columnNo="1"/>
     <column attributeName="calendarPoint" columnNo="2"/>
@@ -13,7 +13,7 @@
     <column attributeName="SCGName" columnNo="3"/>
     <column attributeName="clinicalStatus" columnNo="4"/>
     <column attributeName="clinicalDiagnosis" columnNo="5"/>
-    <column attributeName="userEmail" fixedValue="forei@mail.nih.gov"/>
+    <column attributeName="userEmail" fixedValue="bill@rfu.com"/>
     <column attributeName="groupCollTime" columnNo="7"/>
     <column attributeName="groupRecTime" columnNo="8"/>
     <column attributeName="specCollTime" columnNo="7"/>
@@ -38,5 +38,7 @@
     <column attributeName="groupActivityStatus" fixedValue="Active"/>
     <column attributeName="specimenActivityStatus" fixedValue="Active"/>
     <column attributeName="specimenAvailable" fixedValue="true"/>
-
+    <column attributeName="groupCollectionStatus" fixedValue="Complete"/>
+    <column attributeName="specimenCollectionStatus" fixedValue="Collected"/>
+    
 </columnMap>

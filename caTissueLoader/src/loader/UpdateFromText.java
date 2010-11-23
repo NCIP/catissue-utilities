@@ -22,13 +22,11 @@ import edu.wustl.catissuecore.domain.FluidSpecimen;
 import edu.wustl.catissuecore.domain.MolecularSpecimen;
 import edu.wustl.catissuecore.domain.Participant;
 import edu.wustl.catissuecore.domain.ParticipantMedicalIdentifier;
-import edu.wustl.catissuecore.domain.SpecimenEventParameters;
 /*import edu.wustl.catissuecore.domain.Quantity;
 import edu.wustl.catissuecore.domain.QuantityInCount;
 import edu.wustl.catissuecore.domain.QuantityInGram;
 import edu.wustl.catissuecore.domain.QuantityInMicrogram;
-import edu.wustl.catissuecore.domain.QuantityInMilliliter;
-*/
+import edu.wustl.catissuecore.domain.QuantityInMilliliter;*/
 import edu.wustl.catissuecore.domain.ReceivedEventParameters;
 import edu.wustl.catissuecore.domain.Site;
 import edu.wustl.catissuecore.domain.Specimen;
@@ -55,6 +53,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import javax.swing.JFileChooser;
+
 import caTissueUtils.caTissueSession;
 
 
@@ -62,7 +62,7 @@ import keychain.CaTissueInstance;
 import keychain.KeyChainLoader;
 import net.sf.flatpack.util.ParserUtils;
 
-public class LoadFromText {
+public class UpdateFromText {
 
 
 	private ApplicationService appService ;
@@ -84,13 +84,15 @@ public class LoadFromText {
 
 	private Map<String,Class> specimenClassMap = new HashMap<String,Class>();
 
+
+
 	private long participantsLoaded = 0;
 	private long medicalIdentifiersLoaded = 0;
 	private long collectionGroupsLoaded = 0;
 	private long specimensLoaded = 0;
 
 
-	public LoadFromText() {
+	public UpdateFromText() {
 		// This map specifies the order of the columns in the source data file
 		// plus other parameters like dateformat
 		colMap = new ReadColumnMap();
@@ -111,8 +113,14 @@ public class LoadFromText {
 		mapFileName = args[3];
 		if (args.length > 4)
 			badDataFileName = args[4];
+		
+		//Create a file chooser
+		//final JFileChooser fc = new JFileChooser();
+		//...
+		//In response to a button click:
+		//int returnVal = fc.showOpenDialog(UpdateFromText.this);
 
-		LoadFromText test = new LoadFromText();
+		UpdateFromText test = new UpdateFromText();
 		System.out.println("*** " + test.getClass().getName() + " - load caTissue from a text file...");
 
 		test.addObjects(instanceName);
@@ -121,7 +129,7 @@ public class LoadFromText {
 	private void addObjects(String instanceName)
 	{
 		appService = caTissueSession.logon(instanceName, keyChainName);
-		
+
 		colMap.getColumnMapFromFile(mapFileName);
 		try
 		{
@@ -158,7 +166,7 @@ public class LoadFromText {
 					if  (colMap.getRowClasses().contains("Participant"))
 						addParticipant();
 					if  (colMap.getRowClasses().contains("SpecimenCollectionGroup"))
-						addGroup();
+						updateGroup();
 					if  (colMap.getRowClasses().contains("Specimen"))
 						addSpecimen();
 				}
@@ -279,7 +287,6 @@ public class LoadFromText {
 			cpr.setParticipant(p);
 			cpr.setProtocolParticipantIdentifier(colMap.getValue("PPI"));
 			cpr.setActivityStatus(colMap.getValue("regActivityStatus"));
-			cpr.setRegistrationDate(colMap.getDate("registrationDate"));
 			try {
 				cpr =  (CollectionProtocolRegistration) appService.createObject(cpr);
 			} catch (ApplicationException e) {
@@ -294,16 +301,15 @@ public class LoadFromText {
 		}
 	}
 
-	private SpecimenCollectionGroup addGroup()
+	private SpecimenCollectionGroup updateGroup()
 	throws caTissueLoadException
 	{
 		try {
 
-			CollectionProtocolRegistration reg = findCPR(colMap.getValue("protocolTitle"),
-					colMap.getValue("PPI") );
-
-			SpecimenCollectionGroup g = new SpecimenCollectionGroup();
-			g.setCollectionProtocolRegistration(reg);
+			SpecimenCollectionGroup g = findExpectedSCG(colMap.getValue("protocolTitle"),
+					colMap.getValue("PPI"),
+					colMap.getValue("calendarPoint"));
+			//SpecimenCollectionGroup g = findExpectedSCG(reg,cpe);
 
 			g.setSpecimenCollectionSite(findSite(colMap.getValue("siteName")));
 			//g.setSite(findSite(colMap.getValue("siteName")));
@@ -312,10 +318,9 @@ public class LoadFromText {
 			g.setClinicalDiagnosis(colMap.getValue("clinicalDiagnosis"));
 			g.setName(colMap.getValue("SCGName"));
 			g.setClinicalStatus(colMap.getValue("clinicalStatus"));
-			CollectionProtocolEvent ev = findCPEvent(colMap.getValue("protocolTitle"), 
-					colMap.getValue("calendarPoint"));
-			g.setCollectionProtocolEvent(ev);
 			g.setCollectionStatus(colMap.getValue("groupCollectionStatus"));
+
+			//g.setCollectionStatus(colMap.getValue("collectionStatus"));
 			//g.setApplyEventsToSpecimens(true);
 
 
@@ -326,34 +331,29 @@ public class LoadFromText {
 			coll.setCollectionProcedure(colMap.getValue("collectionProcedure"));
 			coll.setContainer(colMap.getValue("container"));
 			coll.setTimestamp(colMap.getDate("groupCollTime"));
-			System.out.println("Coll date: " + colMap.getDate("groupCollTime"));
 			coll.setSpecimenCollectionGroup(g);
-
+			
 			ReceivedEventParameters rec = new ReceivedEventParameters();
 			rec.setUser(u);
 			rec.setReceivedQuality(colMap.getValue("receivedQuality"));
 			rec.setTimestamp(colMap.getDate("groupRecTime"));
-			System.out.println("Rec date: " + colMap.getDate("groupRecTime"));
 			rec.setSpecimenCollectionGroup(g);
 
-			Collection<SpecimenEventParameters> events = new HashSet<SpecimenEventParameters>();
+			Collection events = new HashSet();
 			events.add(coll);
 			events.add(rec);
 
 			g.setSpecimenEventParametersCollection(events);
-			
-
-
 
 			SpecimenCollectionGroup gg;
 			try {
-				gg = (SpecimenCollectionGroup) appService.createObject(g);
+				gg = (SpecimenCollectionGroup) appService.updateObject(g);
 			} catch (ApplicationException e) {
 				caTissueLoadException le = new caTissueLoadException(e,"Specimen Collection Group");
 				throw le;
 			}
 			collectionGroupsLoaded++;
-			System.out.println("Group added label: " + gg.getName());
+			System.out.println("Group updated label: " + gg.getName());
 
 			return gg;
 
@@ -368,52 +368,27 @@ public class LoadFromText {
 		try {
 			String specType = colMap.getValue("specimenType");
 			// Instantiate the right subclass of specimen for this specimen type
-			Specimen s = (Specimen) specimenClassMap.get(specType).newInstance();
-			// Handle the Not Specified situation
-			if (colMap.getValue("specimenType").endsWith("Not Specified")) {
+			Specimen s = findExpectedSpecimen(colMap.getValue("SCGName"),  colMap.getValue("tissueSite"));
 
-				s.setSpecimenType("Not Specified");
-			}
-			else
-				s.setSpecimenType(colMap.getValue("specimenType"));
-
-
+			System.out.println("Got here");
+			System.out.println("Specimen: " + s);
+			
 			s.setIsAvailable(new Boolean(colMap.getValue("specimenAvailable")));
 			s.setLabel(colMap.getValue("label"));
 			s.setPathologicalStatus(colMap.getValue("pathologicalStatus"));
-			SpecimenCharacteristics sc = new SpecimenCharacteristics();
+			//s.SpecimenCharacteristics sc = new SpecimenCharacteristics();
+			SpecimenCharacteristics sc = s.getSpecimenCharacteristics();
+
 			sc.setTissueSide(colMap.getValue("tissueSide"));
 			sc.setTissueSite(colMap.getValue("tissueSite"));
 			s.setSpecimenCharacteristics(sc);
 
 			s.setLineage(colMap.getValue("lineage"));
 
-			Double q = null;
-/*			if (s.getClass() == TissueSpecimen.class)
-				q = new QuantityInGram();
-			if (s.getClass() == FluidSpecimen.class) 
-				q = new QuantityInMilliliter();
-			if (s.getClass() == CellSpecimen.class)
-				q = new QuantityInCount();
-			if (s.getClass() == MolecularSpecimen.class)
-				q = new QuantityInMicrogram();
-			if (q == null)
-				q = new Quantity();
-*/			
-			q = new Double(colMap.getValue("quantity"));
-			
-			s.setInitialQuantity(q);
-			//s.setAvailableQuantity(q);
-			//s.setQuantity(q);
-			// get another instance of the same class instead of going through our cascade again!
-			//Quantity aq = q.getClass().newInstance();
-			//aq.setValue(new Double(colMap.getValue("availableQuantity")));
-			Double aq = new Double(colMap.getValue("availableQuantity"));
-			s.setAvailableQuantity(aq);
+			s.setInitialQuantity(new Double(colMap.getValue("quantity")));
+			s.setAvailableQuantity(new Double(colMap.getValue("availableQuantity")));
 
 
-			if (colMap.getValue("SCGName") != null)
-				s.setSpecimenCollectionGroup(findSCG(colMap.getValue("SCGName")));
 			if (colMap.getValue("parentSpecimenLabel") != null) {
 				Specimen parent = findSpecimen(colMap.getValue("parentSpecimenLabel"));
 				s.setParentSpecimen(parent);
@@ -422,6 +397,7 @@ public class LoadFromText {
 			}
 
 			s.setActivityStatus(colMap.getValue("specimenActivityStatus"));
+			s.setCollectionStatus(colMap.getValue("specimenCollectionStatus"));
 
 			User u = findUser(colMap.getValue("userEmail"));
 
@@ -430,23 +406,23 @@ public class LoadFromText {
 			specColl.setCollectionProcedure(colMap.getValue("collectionProcedure"));
 			specColl.setContainer(colMap.getValue("container"));
 			specColl.setTimestamp(colMap.getDate("specCollTime"));
+			specColl.setSpecimen(s);
 
 			ReceivedEventParameters specRec = new ReceivedEventParameters();
 			specRec.setUser(u);
 			specRec.setReceivedQuality(colMap.getValue("receivedQuality"));
 			specRec.setTimestamp(colMap.getDate("specRecTime"));
+			specColl.setSpecimen(s);
 
 			Collection specEvents = new HashSet();
 			specEvents.add(specColl);
 			specEvents.add(specRec);
-			
-
 
 			s.setSpecimenEventCollection(specEvents);
 
 			Specimen ss;
 			try {
-				ss = (Specimen) appService.createObject(s);
+				ss = (Specimen) appService.updateObject(s);
 			} catch (ApplicationException e) {
 				caTissueLoadException le = new caTissueLoadException(e,"Specimen");
 				throw le;
@@ -456,13 +432,6 @@ public class LoadFromText {
 		} 
 		catch (caTissueLoadException e) {
 			throw e;
-		}
-		catch (InstantiationException e) {
-			caTissueLoadException le = new caTissueLoadException(e,InstantiationException.class.getName());
-			throw le;
-		} catch (IllegalAccessException e) {
-			caTissueLoadException le = new caTissueLoadException(e,IllegalAccessException.class.getName());
-			throw le;
 		}
 	}
 
@@ -602,6 +571,37 @@ public class LoadFromText {
 		return r;
 	}
 
+	private Specimen findExpectedSpecimen(String SCGName, String tissueSite){
+
+		//if (specimenCache.containsKey(label))
+		//	return specimenCache.get(label);
+
+		SpecimenCollectionGroup g = new SpecimenCollectionGroup();
+		g.setName(SCGName);
+		// Search for the specified specimen
+		Specimen s = new Specimen();
+		s.setSpecimenCollectionGroup(g);
+		SpecimenCharacteristics c= new SpecimenCharacteristics();
+		c.setTissueSite(tissueSite);
+		s.setSpecimenCharacteristics(c);
+		
+		Specimen r = null;
+		List resultList;
+		try {
+			resultList = appService.search(Specimen.class,s);
+			for (Iterator resultsIterator = resultList.iterator(); resultsIterator.hasNext();) 
+			{
+				r = (Specimen) resultsIterator.next();
+				System.out.println("Specimen Found ---->  :: " + r.getLabel());
+			}
+		} catch (ApplicationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//specimenCache.put(label, r);
+		return r;
+	}
+
 	private SpecimenCollectionGroup findSCG(String name){
 
 		if (SCGCache.containsKey(name))
@@ -625,6 +625,48 @@ public class LoadFromText {
 			e.printStackTrace();
 		}
 		SCGCache.put(name, r);
+		return r;
+	}
+
+	private SpecimenCollectionGroup findExpectedSCG(String protocolTitle, String ppi, String calendarPoint){
+
+		//if (SCGCache.containsKey(name))
+			//return SCGCache.get(name);
+		
+		//CollectionProtocolRegistration reg = findCPR(protocolTitle,ppi);
+		//CollectionProtocolEvent cpe = findCPEvent(protocolTitle,calendarPoint);
+		
+		CollectionProtocol cp = new CollectionProtocol();
+		cp.setTitle(protocolTitle);
+		
+		CollectionProtocolRegistration reg = new CollectionProtocolRegistration();
+		reg.setCollectionProtocol(cp);
+		reg.setProtocolParticipantIdentifier(ppi);
+		
+		CollectionProtocolEvent cpe = new CollectionProtocolEvent();
+		cpe.setCollectionPointLabel(calendarPoint);
+		cpe.setCollectionProtocol(cp);
+			
+
+		// Search for the specified registration
+		SpecimenCollectionGroup g = new SpecimenCollectionGroup();
+		g.setCollectionProtocolRegistration(reg);
+		g.setCollectionProtocolEvent(cpe);
+
+		SpecimenCollectionGroup r = null;
+		List resultList;
+		try {
+			resultList = appService.search(SpecimenCollectionGroup.class,g);
+			for (Iterator resultsIterator = resultList.iterator(); resultsIterator.hasNext();) 
+			{
+				r = (SpecimenCollectionGroup) resultsIterator.next();
+				System.out.println("Specimen Collection Group Found ---->  :: " + r.getName());
+			}
+		} catch (ApplicationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//SCGCache.put(name, r);
 		return r;
 	}
 

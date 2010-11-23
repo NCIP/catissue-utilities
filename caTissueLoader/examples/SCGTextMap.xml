@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <columnMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:noNamespaceSchemaLocation="../xml/caTissueTextMap.xsd"
+ 
  headerRow="true"
  fileType="xlText">
     <dateFormat>MM/dd/yyyy</dateFormat>
-    <rowClass>Specimen</rowClass>
+    <!--rowClass>Specimen</rowClass-->
     <rowClass>SpecimenCollectionGroup</rowClass>
     <column attributeName="protocolTitle" fixedValue="Demo of collection protocol"/>
     <column attributeName="PPI" columnNo="1"/>
@@ -13,7 +13,7 @@
     <column attributeName="SCGName" columnNo="3"/>
     <column attributeName="clinicalStatus" columnNo="4"/>
     <column attributeName="clinicalDiagnosis" columnNo="5"/>
-    <column attributeName="userEmail" fixedValue="forei@mail.nih.gov"/>
+    <column attributeName="userEmail" fixedValue="bill@rfu.com"/>
     <column attributeName="groupCollTime" columnNo="7"/>
     <column attributeName="groupRecTime" columnNo="8"/>
     <column attributeName="specCollTime" columnNo="7"/>
@@ -24,16 +24,9 @@
     <column attributeName="quantity" columnNo="12"/>
     <column attributeName="availableQuantity" columnNo="12"/>
     <column attributeName="lineage" columnNo="13"/>
-    
     <column attributeName="specimenType" columnNo="14"/>
     <column attributeName="tissueSide" columnNo="15"/>
-        <column attributeName="collectionProcedure" columnNo="11">
-        <valueMapping>
-            <valueMap fromValue="Blood" toValue="Indwelling Catheter"/>
-            <valueMap fromValue="Prostate gland" toValue="Needle Core Biopsy"/>
-            <valueMap fromValue="Mouth, NOS" toValue="Not Specified"/>
-        </valueMapping>
-    </column>
+    <column attributeName="collectionProcedure" fixedValue="Not Specified"/>
     <column attributeName="container" columnNo="16">
         <valueMapping>
             <valueMap fromValue="Red Top" ignoreCase="true" toValue="EDTA Vacutainer"/>
@@ -45,5 +38,6 @@
     <column attributeName="groupActivityStatus" fixedValue="Active"/>
     <column attributeName="specimenActivityStatus" fixedValue="Active"/>
     <column attributeName="specimenAvailable" fixedValue="true"/>
-
+    <column attributeName="groupCollectionStatus" fixedValue="Complete"/>
+    
 </columnMap>

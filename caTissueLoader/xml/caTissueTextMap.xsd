@@ -79,6 +79,7 @@
       <xs:enumeration value = "lastName"/>
       <xs:enumeration value = "lineage"/>
       <xs:enumeration value = "medicalRecordNumber"/>
+      <xs:enumeration value = "registrationDate"/>
       <xs:enumeration value = "middleName"/>
       <xs:enumeration value = "parentSpecimenLabel"/>
       <xs:enumeration value = "participantActivityStatus"/>
@@ -99,6 +100,8 @@
       <xs:enumeration value = "socialSecurityNumber"/>
       <xs:enumeration value = "specCollTime"/>
       <xs:enumeration value = "specimenActivityStatus"/>
+      <xs:enumeration value = "specimenCollectionStatus"/>
+      <xs:enumeration value = "groupCollectionStatus"/>
       <xs:enumeration value = "specimenAvailable"/>
       <xs:enumeration value = "specimenType"/>
       <xs:enumeration value = "specRecTime"/>
