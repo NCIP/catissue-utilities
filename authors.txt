@@ -1,4 +1,0 @@
-(no author) = no_author <no_author@no_author.cvs2svn>
-forei = Ian Fore <forei@mail.nih.gov>
-root = root <root>
-marwahan = Nitesh Marwaha <marwaha.nitesh@gmail.com>
