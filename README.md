@@ -25,7 +25,6 @@ Please see the NOTICE and LICENSE files for details.
 You will find more details about the caTissue Utilities in the following links:
  * [caTissue Tools Home Page] (https://wiki.nci.nih.gov/display/caTissue/caTissue+Tools+Wiki)
  * [caTissue Home] (https://wiki.nci.nih.gov/display/caTissuedoc/caTissue+Documentation+Wiki)
- * [NCI OSDI] (https://wiki.nci.nih.gov/display/caBIGCommunityCode/CBIIT+Open+Source+Development+Initiative)
  * [Issue Tracker] (https://bugzilla.wustl.edu/bugzilla/)
  * [Code Repository] (https://github.com/NCIP/catissue-utilities)
 
