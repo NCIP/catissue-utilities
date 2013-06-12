@@ -1,0 +1,8 @@
+Buildfile: C:\DEV\GIT-WORK\catissue\catissue-utilities\caTissueCoreAPIExamples\build.xml
+
+init:
+
+compile:
+    [javac] Compiling 7 source files to C:\DEV\GIT-WORK\catissue\catissue-utilities\caTissueCoreAPIExamples\bin
+BUILD FAILED
+C:\DEV\GIT-WORK\catissue\catissue-utilities\caTissueCoreAPIExamples\build.xml:63: C:\Users\ian\dev\caTissueCore_caCORE_Client\lib does not exist.

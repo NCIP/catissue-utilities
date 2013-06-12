@@ -1,0 +1,60 @@
+Buildfile: C:\DEV\GIT-WORK\SVN\catissue_utilities\caGridLogger\build.xml
+
+compile:
+    [javac] C:\DEV\GIT-WORK\SVN\catissue_utilities\caGridLogger\build.xml:58: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+run:
+     [java] C:\Users\ian\tools\FMPjdbc\driver\lib does not exist.
+     [java]     at org.apache.tools.ant.types.AbstractFileSet.getDirectoryScanner(AbstractFileSet.java:483)
+     [java]     at org.apache.tools.ant.types.FileSet.iterator(FileSet.java:69)
+     [java]     at org.apache.tools.ant.types.resources.Union.getCollection(Union.java:123)
+     [java]     at org.apache.tools.ant.types.resources.Union.getCollection(Union.java:107)
+     [java]     at org.apache.tools.ant.types.resources.BaseResourceCollectionContainer.cacheCollection(BaseResourceCollectionContainer.java:265)
+
+     [java]     at org.apache.tools.ant.types.resources.BaseResourceCollectionContainer.iterator(BaseResourceCollectionContainer.java:142)
+     [java]     at org.apache.tools.ant.types.Path.iterator(Path.java:712)
+     [java]     at org.apache.tools.ant.types.Path.iterator(Path.java:706)
+     [java]     at org.apache.tools.ant.types.resources.Union.getCollection(Union.java:123)
+     [java]     at org.apache.tools.ant.types.resources.Union.list(Union.java:86)
+     [java]     at org.apache.tools.ant.types.Path.list(Path.java:379)
+     [java]     at org.apache.tools.ant.types.Path.addExisting(Path.java:332)
+     [java]     at org.apache.tools.ant.types.Path.addExisting(Path.java:320)
+     [java]     at org.apache.tools.ant.types.Path.concatSpecialPath(Path.java:573)
+     [java]     at org.apache.tools.ant.types.Path.concatSystemClasspath(Path.java:533)
+     [java]     at org.apache.tools.ant.AntClassLoader.setClassPath(AntClassLoader.java:355)
+     [java]     at org.apache.tools.ant.AntClassLoader.<init>(AntClassLoader.java:269)
+     [java]     at org.apache.tools.ant.AntClassLoader.<init>(AntClassLoader.java:290)
+     [java]     at org.apache.tools.ant.loader.AntClassLoader5.<init>(AntClassLoader5.java:51)
+     [java]     at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+     [java]     at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+     [java]     at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+     [java]     at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+     [java]     at org.apache.tools.ant.util.ReflectUtil.newInstance(ReflectUtil.java:49)
+     [java]     at org.apache.tools.ant.AntClassLoader.newAntClassLoader(AntClassLoader.java:1555)
+     [java]     at org.apache.tools.ant.Project.createClassLoader(Project.java:339)
+     [java]     at org.apache.tools.ant.taskdefs.ExecuteJava.execute(ExecuteJava.java:128)
+     [java]     at org.apache.tools.ant.taskdefs.Java.run(Java.java:771)
+     [java]     at org.apache.tools.ant.taskdefs.Java.executeJava(Java.java:221)
+     [java]     at org.apache.tools.ant.taskdefs.Java.executeJava(Java.java:135)
+     [java]     at org.apache.tools.ant.taskdefs.Java.execute(Java.java:108)
+     [java]     at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+     [java]     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     [java]     at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+     [java]     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+     [java]     at java.lang.reflect.Method.invoke(Method.java:597)
+     [java]     at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+     [java]     at org.apache.tools.ant.Task.perform(Task.java:348)
+     [java]     at org.apache.tools.ant.Target.execute(Target.java:392)
+     [java]     at org.apache.tools.ant.Target.performTasks(Target.java:413)
+     [java]     at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+     [java]     at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+     [java]     at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+     [java]     at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+     [java]     at org.apache.tools.ant.Main.runBuild(Main.java:811)
+     [java]     at org.apache.tools.ant.Main.startAnt(Main.java:217)
+     [java]     at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+     [java]     at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+     [java] Java Result: -1
+
+BUILD SUCCESSFUL
+Total time: 0 seconds

@@ -1,0 +1,4 @@
+Buildfile: C:\DEV\GIT-WORK\SVN\catissue_utilities\caTissueLoader\build.xml
+BUILD FAILED
+C:\DEV\GIT-WORK\SVN\catissue_utilities\caTissueLoader\build.xml:62: C:\Users\ian\apps\caTissue_Suite_v1_1\caTissueSuite_Client\lib does not exist
+.
