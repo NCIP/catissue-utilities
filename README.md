@@ -17,7 +17,7 @@ caTissue Utilities has following components:
 	1.  Load data from text files. This permits loading of participants, specimen collection groups and specimens plus the basic classes that go along with them such as registrations, collection and received events.
 	
 
-caTissue Suite uses caTissue Utilities.
+caTissue Suite uses caTissue Utilities. caTissue Utilities is an Open Source project and it is written in Java, SQL using caGrid, Globus, Axis, JAXB, Hibernate, Spring framework technologies.
 
 The caTissue Utilities is distributed under the BSD 3-Clause License.
 Please see the NOTICE and LICENSE files for details.
